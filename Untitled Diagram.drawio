@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-30T16:38:16.706Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" etag="oVaZDBP10y4JZt35G7MO" version="22.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-30T16:55:09.547Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" etag="76P78HNXBHnNQHblpCAR" version="22.1.5" type="github">
   <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
     <mxGraphModel dx="2246" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" background="none" math="0" shadow="0">
       <root>
@@ -139,8 +139,8 @@
         <mxCell id="49lOu38Vku09HcyN88f1-8" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&amp;nbsp;Conditions&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getConditions()&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
           <mxGeometry x="795" y="970" width="219" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="49lOu38Vku09HcyN88f1-11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&amp;nbsp;LocManager&lt;/p&gt;&lt;hr&gt;&amp;nbsp;- storyLocation: Location&lt;br&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setStoryLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getStoryLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getPersonsLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+setPersonsLocation()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="160" y="930" width="219" height="210" as="geometry" />
+        <mxCell id="49lOu38Vku09HcyN88f1-11" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&amp;nbsp;LocManager&lt;/p&gt;&lt;hr&gt;&amp;nbsp;- storyLocation: Location&lt;br&gt;&lt;hr&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setStoryLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getStoryLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getPersonsLocation()&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setPersonsLocation()&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="160" y="930" width="219" height="140" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
