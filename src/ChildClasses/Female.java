@@ -36,31 +36,23 @@ public class Female extends Person {
     public void drinkAlcohol(Beverage beverage, AMOUNT amount){
         if (this.location instanceof OuterPlace) {
             OuterPlace outerPlace = (OuterPlace) this.location;
-            AMOUNT alcoholAmount = outerPlace.getAlcoholAmount();
-            if (alcoholAmount != AMOUNT.NONE){
-                switch (alcoholAmount){
-                    case ALOT -> {
-                        outerPlace.setAlcoholAmount(AMOUNT.PLENTY);
-                    }
-                    case PLENTY -> {
-                        outerPlace.setAlcoholAmount(AMOUNT.FEW);
-                    }
-                    case FEW -> {
-                        outerPlace.setAlcoholAmount(AMOUNT.NONE);
-                    }
-                    default -> {
-                        break;
-                    }
-                }
-                System.out.println(this.name + " выпила " + amount + " " + beverage.getTare() + " " + beverage.getName());
-                if (outerPlace.getAlcoholAmount() != AMOUNT.NONE) {
+            int alcoholAmount = outerPlace.getAlcoholAmount().toInt();
+            if (alcoholAmount > 0){
+                if (alcoholAmount - amount.toInt() > 0){
+                    outerPlace.setAlcoholAmount(AMOUNT.fromInt(alcoholAmount - amount.toInt()));
+                    System.out.println(this.name + " выпило " + amount.toString() + " " + beverage.getTare() + " " + beverage.getName());
                     System.out.println("В " + outerPlace.getLocname() + " осталось " + outerPlace.getAlcoholAmount() + " выпивки");
-                } else {
+                } else if (alcoholAmount - amount.toInt() < 0) {
+                    outerPlace.setAlcoholAmount(AMOUNT.NONE);
+                    System.out.println(this.name + " выпил всю оставшуюся выпивку, которой было " + AMOUNT.fromInt(alcoholAmount-amount.toInt()));
                     System.out.println("В " + outerPlace.getLocname() + " не осталось выпивки");
+                } else {
+                    System.out.println(this.name + " хотело было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
                 }
+
             }
         } else {
-            System.out.println(this.name + " хотела было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
+            System.out.println(this.name + " хотело было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
         }
     }
     @Override
