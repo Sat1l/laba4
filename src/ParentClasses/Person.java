@@ -33,7 +33,7 @@ public abstract class Person {
     public abstract void bring(Item item);
     public abstract void say(String phrase);
 
-    public abstract void drink(Beverage beverage, AMOUNT amount);
+    public abstract void drinkAlcohol(Beverage beverage, AMOUNT amount);
 
     public abstract void think(String thought);
 
