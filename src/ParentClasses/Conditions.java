@@ -3,8 +3,6 @@ package ParentClasses;
 import Enums.AMOUNT;
 import Enums.DIRECTION;
 import Enums.STRENGTH;
-import Interfaces.CloudyWeather;
-import Interfaces.WindyWeather;
 
 public class Conditions {
     private AMOUNT cloudsAmount;
