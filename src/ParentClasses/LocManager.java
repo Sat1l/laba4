@@ -7,6 +7,7 @@ public class LocManager {
     }
     public void setStoryLocation(Location newlocation){
         this.storyLocation = newlocation;
+        System.out.println("Действия перемещаются в " + newlocation);
     }
     public Location getStoryLocation(){
         return this.storyLocation;

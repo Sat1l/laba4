@@ -5,11 +5,13 @@ public enum AMOUNT {
     FEW("немного"),
     PLENTY("достаточно"),
     ALOT("большое количество");
-    public String naming;
+    public String amount;
     private AMOUNT(String amount){
-        this.naming = naming;
+        this.amount = amount;
     }
+
+    @Override
     public String toString(){
-        return this.naming;
+        return this.amount;
     }
 }

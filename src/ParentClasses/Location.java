@@ -1,9 +1,9 @@
 package ParentClasses;
 
 public class Location {
-    private String loc;
+    protected String locname;
 
-    public void setLocation(Location l){
-        System.out.println("Действия перемещаются в " + l.loc);
+    public Location(String locname){
+        this.locname = locname;
     }
 }

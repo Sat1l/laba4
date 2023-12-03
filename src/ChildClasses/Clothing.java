@@ -1,6 +1,8 @@
-package ParentClasses;
+package ChildClasses;
 
-public class Clothing extends Item{
+import ParentClasses.Item;
+
+public class Clothing extends Item {
     private boolean isZipped;
 
     public Clothing(String name) {
@@ -8,7 +10,9 @@ public class Clothing extends Item{
         this.isZipped = false;
     }
 
-    public boolean getIsZipepd(){ return isZipped; }
+    public boolean getIsZipepd(){
+        return isZipped;
+    }
 
     public void setIsZipped(boolean zorunz){ // zorunz = zip or unzip
         this.isZipped = zorunz;

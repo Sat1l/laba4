@@ -6,6 +6,6 @@ public abstract class Couple {
     public Couple(String name){ this.name = name; }
 
     void bringTogether(Item item) {
-        System.out.println(this.name + " принесли " + item.name);
+        System.out.println(this.name + " принесли " + item.getName());
     }
 }

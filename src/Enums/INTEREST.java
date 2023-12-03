@@ -6,8 +6,11 @@ public enum INTEREST {
 
     public String interest;
 
-    private INTEREST(String interest){this.interest = interest;}
+    private INTEREST(String interest){
+        this.interest = interest;
+    }
 
+    @Override
     public String toString(){
         return this.interest;
     }

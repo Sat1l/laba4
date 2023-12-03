@@ -1,5 +1,9 @@
 package ParentClasses;
 
+import ChildClasses.Beverage;
+import ChildClasses.Clothing;
+import ChildClasses.TV;
+import Enums.AMOUNT;
 import Enums.INTEREST;
 import Enums.SEX;
 
@@ -24,7 +28,7 @@ public abstract class Person {
     }
     public void zip(Clothing clothing){
         if(clothing.getIsZipepd()){
-            System.out.println(this.name + "попытался застегнуть " + clothing.name + ", но она уже была застегнута");
+            System.out.println(this.name + "попытался застегнуть " + clothing.getName() + ", но она уже была застегнута");
         }
         else {
             clothing.setIsZipped(true);
@@ -38,14 +42,14 @@ public abstract class Person {
       this.location = location;
     }
     void bring(Item item) {
-        System.out.println(this.name + GrammarUtils.genderify("принес", this.sex) + item.name);
+        System.out.println(this.name + GrammarUtils.genderify("принес", this.sex) + item.getName());
     }
     void say(String phrase){
         System.out.println(" - " + phrase + " " + GrammarUtils.genderify("сказал", this.sex) + " "+ this.name);
     }
 
-    void drink(Beverage beverage){
-        System.out.println(this.name + " " + GrammarUtils.genderify("выпил", this.sex) + " " + beverage.name);
+    void drink(Beverage beverage, AMOUNT amount){
+        System.out.println(this.name + " " + GrammarUtils.genderify("выпил", this.sex) + " " + amount + " " + beverage.getTare() + " " + beverage.getName());
     }
 
     void think(String thought){
@@ -57,12 +61,12 @@ public abstract class Person {
     }
 
     void watchTV(TV tv){
-        System.out.println(this.name + " смотрит " + tv.shows);
+        System.out.println(this.name + " смотрит " + tv.getShows());
     }
 
     void putOn(Clothing clothing){
         this.wears.add(clothing);
-        System.out.println(this.name + "" + GrammarUtils.genderify("надел", this.sex) + " " + clothing.name);
+        System.out.println(this.name + " " + GrammarUtils.genderify("надел", this.sex) + " " + clothing.getName());
     }
 
     void flipPages(INTEREST interest){
