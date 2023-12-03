@@ -4,7 +4,7 @@ public enum INTEREST {
     DEDICATED("с интересом"),
     CARELESS("без интереса");
 
-    public String interest;
+    private final String interest;
 
     private INTEREST(String interest){
         this.interest = interest;

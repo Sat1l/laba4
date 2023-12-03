@@ -5,7 +5,7 @@ public enum CONDITION {
     DRUNK("пьяный"),
     CALM("спокойный");
 
-    public String condition;
+    private final String condition;
     private CONDITION(String condition){
         this.condition = condition;
     }
