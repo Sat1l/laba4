@@ -1,10 +1,15 @@
 package Enums;
 
 public enum STRENGTH {
+
     WEAK("слабый"),
+
     MEDIUM("средний"),
+
     STRONG("сильный");
+
     private final String strength;
+
     private STRENGTH(String strength){
         this.strength = strength;
     }
@@ -13,4 +18,5 @@ public enum STRENGTH {
     public String toString(){
         return this.strength;
     }
+
 }

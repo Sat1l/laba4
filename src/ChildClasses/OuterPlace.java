@@ -6,8 +6,11 @@ import Interfaces.hasOccasion;
 import ParentClasses.Location;
 
 public class OuterPlace extends Location implements  hasOccasion, hasAlcohol {
-    protected String occasion;
-    protected AMOUNT alcoholAmount;
+
+    private String occasion;
+
+    private AMOUNT alcoholAmount;
+
     public OuterPlace(String locname, String occasion, AMOUNT alcoholAmount){
         super(locname);
         this.occasion = occasion;
@@ -15,7 +18,7 @@ public class OuterPlace extends Location implements  hasOccasion, hasAlcohol {
     }
 
     @Override
-    public String getWhatToToastTo(String reason) {
+    public String getOccasion() {
         return this.occasion;
     }
     @Override
@@ -28,4 +31,5 @@ public class OuterPlace extends Location implements  hasOccasion, hasAlcohol {
         this.alcoholAmount = newamount;
         System.out.println("Теперь в " + this.locname + " осталось " + newamount + " выпивки ");
     }
+
 }

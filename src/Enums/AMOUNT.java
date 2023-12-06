@@ -1,12 +1,19 @@
 package Enums;
 
 public enum AMOUNT {
+
     NONE("отсутствуют", 0),
+
     FEW("немного", 1),
+
     PLENTY("достаточно", 2),
+
     ALOT("большое количество", 3);
+
     private final String strAmount;
+
     private final int intAmount;
+
     private AMOUNT(String strAmount, int intAmount){
         this.strAmount = strAmount;
         this.intAmount = intAmount;
@@ -29,4 +36,5 @@ public enum AMOUNT {
         }
         throw new IllegalArgumentException("Такого не бывает! Этот енам не может быть равен: " + value);
     }
+
 }

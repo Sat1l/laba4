@@ -3,7 +3,9 @@ package ChildClasses;
 import ParentClasses.Item;
 
 public class TV extends Item {
+
     protected String shows;
+
     public TV(String name, String shows){
         super(name);
         this.shows = shows;
@@ -17,4 +19,5 @@ public class TV extends Item {
         this.shows = toShow;
         System.out.println("Телевизор теперь показывает " + toShow);
     }
+
 }

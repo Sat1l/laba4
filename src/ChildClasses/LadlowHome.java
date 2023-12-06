@@ -1,8 +1,9 @@
 package ChildClasses;
 
+import Interfaces.hasOccasion;
 import ParentClasses.Location;
 
-public class LadlowHome extends Location {
+public class LadlowHome extends Location  implements hasOccasion {
     private String occasion;
 
     public LadlowHome(String loc, String occasion){
@@ -10,7 +11,9 @@ public class LadlowHome extends Location {
         this.occasion = occasion;
     }
 
-    public String getOccasion(){
+    @Override
+    public String getOccasion() {
         return this.occasion;
     }
+
 }

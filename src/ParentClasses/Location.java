@@ -2,6 +2,7 @@ package ParentClasses;
 
 import java.util.Objects;
 public class Location {
+
     protected String locname;
 
     public Location(String locname){
@@ -26,4 +27,5 @@ public class Location {
         Location sec = (Location) toeq;
         return locname == null ? sec.locname == null : locname.equals(sec.locname);
     }
+
 }

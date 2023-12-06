@@ -3,6 +3,7 @@ package ChildClasses;
 import ParentClasses.Item;
 
 public class Clothing extends Item {
+
     private boolean isZipped;
 
     public Clothing(String name) {
@@ -17,4 +18,5 @@ public class Clothing extends Item {
     public void setIsZipped(boolean zorunz){ // zorunz = zip or unzip
         this.isZipped = zorunz;
     }
+
 }

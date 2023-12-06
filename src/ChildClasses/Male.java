@@ -1,6 +1,7 @@
 package ChildClasses;
 
 import Enums.AMOUNT;
+import Enums.CONDITION;
 import Enums.INTEREST;
 import ParentClasses.Item;
 import ParentClasses.Location;
@@ -13,11 +14,11 @@ public class Male extends Person {
     }
 
     public void findItem(Item item){
-        System.out.println(this.name + " отыскал " + item);
+        System.out.println(this.getName() + " отыскал " + item);
     }
     public void zip(Clothing clothing){
         if(clothing.getIsZipepd()){
-            System.out.println(this.name + "попытался застегнуть " + clothing.getName() + ", но она уже была застегнута");
+            System.out.println(this.getName() + "попытался застегнуть " + clothing.getName() + ", но она уже была застегнута");
         }
         else {
             clothing.setIsZipped(true);
@@ -26,11 +27,11 @@ public class Male extends Person {
 
     @Override
     public void bring(Item item){
-        System.out.println(this.name + " принес " + item.getName());
+        System.out.println(this.getName() + " принес " + item.getName());
     }
     @Override
     public void say(String phrase){
-        System.out.println(" - " + phrase + " сказал " + this.name);
+        System.out.println(" - " + phrase + " сказал " + this.getName());
     }
     @Override
     public void drinkAlcohol(Beverage beverage, AMOUNT amount){
@@ -40,32 +41,40 @@ public class Male extends Person {
             if (alcoholAmount > 0){
                 if (alcoholAmount - amount.toInt() > 0){
                     outerPlace.setAlcoholAmount(AMOUNT.fromInt(alcoholAmount - amount.toInt()));
-                    System.out.println(this.name + " выпило " + amount.toString() + " " + beverage.getTare() + " " + beverage.getName());
+                    this.setCondition(CONDITION.DRUNK);
+                    System.out.println(this.getName() + " выпил " + amount.toString() + " " + beverage.getTare() + " " + beverage.getName() + ", и теперь " + this.getCondition().toString());
                     System.out.println("В " + outerPlace.getLocname() + " осталось " + outerPlace.getAlcoholAmount() + " выпивки");
                 } else if (alcoholAmount - amount.toInt() < 0) {
                     outerPlace.setAlcoholAmount(AMOUNT.NONE);
-                    System.out.println(this.name + " выпил всю оставшуюся выпивку, которой было " + AMOUNT.fromInt(alcoholAmount-amount.toInt()));
+                    this.setCondition(CONDITION.DRUNK);
+                    System.out.println(this.getName() + " выпил всю оставшуюся выпивку, которая была " + AMOUNT.fromInt(alcoholAmount-amount.toInt()) + ", и теперь" + this.getCondition().toString());
                     System.out.println("В " + outerPlace.getLocname() + " не осталось выпивки");
                 } else {
-                    System.out.println(this.name + " хотело было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
+                    System.out.println(this.getName() + " хотел было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
                 }
 
             }
         } else {
-            System.out.println(this.name + " хотело было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
+            System.out.println(this.getName() + " хотел было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
         }
     }
     @Override
     public void think(String thought){
-        System.out.println(this.name + " подумал: " + thought);
+        System.out.println(this.getName() + " подумал: " + thought);
     }
     @Override
     public void ask(String phrase, INTEREST interest){
-        System.out.println(" - " + phrase + " - спросил " + this.name + " " + interest);
+        System.out.println(" - " + phrase + " - спросил " + this.getName() + " " + interest);
     }
     @Override
     public void putOn(Clothing clothing){
         this.wears.add(clothing);
-        System.out.println(this.name + " надел " + clothing.getName());
+        System.out.println(this.getName() + " надел " + clothing.getName());
     }
+
+    @Override
+    public void give(Item item, Person person) {
+        System.out.println(this.getName() + " дал " + person.getName() + " " + item.getName());
+    }
+
 }

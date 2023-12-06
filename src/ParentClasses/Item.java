@@ -1,6 +1,7 @@
 package ParentClasses;
 
 public class Item {
+
     private String name;
 
     public Item(String name){
@@ -10,4 +11,5 @@ public class Item {
     public String getName(){
         return this.name;
     }
+
 }

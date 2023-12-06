@@ -9,4 +9,9 @@ public class Keys extends Item {
         super(name);
         this.whatFor = whatFor;
     }
+
+    public String getWhatFor() {
+        return this.whatFor;
+    }
+
 }
