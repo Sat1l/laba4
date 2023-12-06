@@ -62,7 +62,6 @@ public class Female extends Person {
                 } else {
                     System.out.println(this.getName() + " хотела было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
                 }
-
             }
         } else {
             System.out.println(this.getName() + " хотела было выпить, но в " + this.location.getLocname() + " не оказалось выпивки ");
