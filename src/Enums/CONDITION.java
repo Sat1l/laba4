@@ -18,5 +18,4 @@ public enum CONDITION {
     public String toString(){
         return this.condition;
     }
-
 }

@@ -1,22 +1,12 @@
 package ChildClasses;
 
-import ParentClasses.Item;
+import ParentClasses.Location;
+import ParentClasses.Object;
 
-public class Clothing extends Item {
+public class Clothing extends Object {
 
-    private boolean isZipped;
-
-    public Clothing(String name) {
-        super(name);
-        this.isZipped = false;
-    }
-
-    public boolean getIsZipepd(){
-        return isZipped;
-    }
-
-    public void setIsZipped(boolean zorunz){ // zorunz = zip or unzip
-        this.isZipped = zorunz;
+    public Clothing(String name, Location location) {
+        super(name, location);
     }
 
 }

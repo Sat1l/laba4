@@ -1,13 +1,14 @@
 package ChildClasses;
 
-import ParentClasses.Item;
+import ParentClasses.Location;
+import ParentClasses.Object;
 
-public class TV extends Item {
+public class TV extends Object {
 
     protected String shows;
 
-    public TV(String name, String shows){
-        super(name);
+    public TV(String name, String shows, Location location){
+        super(name, location);
         this.shows = shows;
     }
 

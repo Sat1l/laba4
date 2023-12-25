@@ -1,13 +1,15 @@
 package ChildClasses;
 
-import ParentClasses.Item;
+import ParentClasses.Location;
+import ParentClasses.Object;
 
-public class Beverage extends Item {
+public class Beverage extends Object {
 
     private String tare;
 
-    public Beverage(String name, String tare){
-        super(name);
+
+    public Beverage(String name, String tare, Boolean isAlco, Location location){
+        super(name, location);
         this.tare = tare;
     }
 

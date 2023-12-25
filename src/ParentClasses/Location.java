@@ -1,16 +1,28 @@
 package ParentClasses;
 
-import java.util.Objects;
+import java.util.LinkedList;
+
 public class Location {
 
     protected String locname;
 
+    protected LinkedList<Object> objects;
+
     public Location(String locname){
         this.locname = locname;
+        this.objects = new LinkedList<Object>();
     }
 
     public String getLocname(){
-        return this.locname;
+        return locname;
+    }
+
+    public LinkedList<Object> getObjects(){
+        return objects;
+    }
+
+    public void addObject(Object object){
+        this.objects.add(object);
     }
 
     @Override
