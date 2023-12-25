@@ -16,17 +16,17 @@ public class ThinkToDo extends Action {
             f = random.nextFloat();
             if (f > 0.5){
                 System.out.println(person.getName() + " decided to " + action.toString());
+                person.removeDoing(action);
                 return true;
             } else {
                 count++;
                 if (count >= 2) {
                     System.out.println(person.getName() + " decided not to " + action.toString());
+                    person.removeDoing(action);
                     return false;
                 }
             }
         }
-
-
 
     }
 

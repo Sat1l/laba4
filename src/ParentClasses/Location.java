@@ -33,7 +33,7 @@ public class Location {
     }
 
     @Override
-    public boolean equals(Object toeq){ //toeq = to *calculate if* equals
+    public boolean equals(Location toeq){ //toeq = to *calculate if* equals
         if (this == toeq) return true;
         if (toeq == null || getClass() != toeq.getClass()) return false;
         Location sec = (Location) toeq;
