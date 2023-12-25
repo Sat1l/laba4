@@ -1,20 +1,29 @@
-<mxfile host="app.diagrams.net" modified="2023-12-25T02:56:05.169Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" etag="k4h8r6Ekr6MLgJXoLRqj" version="22.1.11" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-25T03:56:13.495Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.1.2 Safari/605.1.15" etag="9MIHNwMYFgvGw0jp3QGG" version="22.1.11" type="github">
   <diagram name="Page-1" id="b5b7bab2-c9e2-2cf4-8b2a-24fd1a2a6d21">
-    <mxGraphModel dx="2164" dy="2230" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1400" background="#232323" math="0" shadow="0">
+    <mxGraphModel dx="3040" dy="2783" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1400" background="#232323" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Abstract class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;Alive&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- condition: CONDITION&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- doing: LinkedList&amp;lt;Action&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- location: Location&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ addDoing(Action)&lt;br&gt;&amp;nbsp;+ removeDoing(Action)&lt;br&gt;&amp;nbsp;+ addInventory(Item)&lt;br&gt;&amp;nbsp;+ removeInventory(Item)" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="SKdy1-YhQ8MqGWsLNDs1-13" target="SKdy1-YhQ8MqGWsLNDs1-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-221" y="414" />
+              <mxPoint x="-221" y="-19" />
+              <mxPoint x="430" y="-19" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Abstract class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;Alive&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- condition: CONDITION&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- doing: LinkedList&amp;lt;Action&amp;gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ addDoing(Action)&lt;br&gt;&amp;nbsp;+ removeDoing(Action)&lt;br&gt;&amp;nbsp;+ addInventory(Item)&lt;br&gt;&amp;nbsp;+ removeInventory(Item)" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
           <mxGeometry x="10" y="414" width="190" height="203" as="geometry" />
         </mxCell>
-        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-14" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;&lt;/i&gt;&lt;i&gt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Item&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ name: String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
-          <mxGeometry x="430" y="30" width="190" height="70" as="geometry" />
+        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-14" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;&lt;/i&gt;&lt;i&gt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Object&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- name: String&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- location: Location&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
+          <mxGeometry x="430" y="1" width="190" height="99" as="geometry" />
         </mxCell>
         <mxCell id="mvq6jaq57gErZufW6YVs-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;labelBackgroundColor=none;strokeColor=#FFFFFF;fontColor=default;" parent="1" source="SKdy1-YhQ8MqGWsLNDs1-17" target="mvq6jaq57gErZufW6YVs-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&lt;/i&gt;&lt;i&gt;&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Jacket&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isZipped: Bool&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
-          <mxGeometry x="220" y="260" width="190" height="67" as="geometry" />
+        <mxCell id="SKdy1-YhQ8MqGWsLNDs1-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&lt;/i&gt;&lt;i&gt;&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Jacket&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isZipped: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isZipperStuck: Boolean&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
+          <mxGeometry x="220" y="260" width="190" height="98" as="geometry" />
         </mxCell>
         <mxCell id="2JTOaVfzzxr4hcnv4jL0-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=block;endFill=0;labelBackgroundColor=none;strokeColor=#FFFFFF;fontColor=default;" parent="1" source="SKdy1-YhQ8MqGWsLNDs1-18" target="SKdy1-YhQ8MqGWsLNDs1-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -28,8 +37,8 @@
         <mxCell id="jRrTDeGObSxWZ0-UT_TB-3" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Keys&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp;+ whatFor: String&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
           <mxGeometry x="640" y="160" width="190" height="70" as="geometry" />
         </mxCell>
-        <mxCell id="jRrTDeGObSxWZ0-UT_TB-11" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Сlass&lt;/i&gt;&lt;i&gt;&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Location&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
-          <mxGeometry x="10" y="960" width="190" height="63" as="geometry" />
+        <mxCell id="jRrTDeGObSxWZ0-UT_TB-11" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Сlass&lt;/i&gt;&lt;i&gt;&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Location&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;- Objects: LinkedList&amp;lt;Object&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" parent="1" vertex="1">
+          <mxGeometry x="10" y="960" width="190" height="82" as="geometry" />
         </mxCell>
         <mxCell id="d48Iyv9rE-sc5_gkzPqc-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=block;endFill=0;labelBackgroundColor=none;strokeColor=#FFFFFF;fontColor=default;" parent="1" source="jRrTDeGObSxWZ0-UT_TB-27" target="jRrTDeGObSxWZ0-UT_TB-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
@@ -101,31 +110,60 @@
           <mxGeometry x="842" y="580" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;CanWear&lt;/p&gt;&lt;hr&gt;+ getWears()&lt;br&gt;+ addWears(Clothing)&lt;br&gt;+ removeWears(Clothing)&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
-          <mxGeometry x="578" y="546" width="219" height="98" as="geometry" />
+          <mxGeometry x="527" y="594" width="219" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-2" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-2" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;WatchTV&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ watchTV(Person, TV)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="289" width="190" height="58" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-3" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-3" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;FlipPages&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ flipPages(Person, Journal, Interest)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="385" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-59" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-4" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-4" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Drink&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ drink(Person, Beverage)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1213" width="190" height="58" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-728.4285714285713" y="244" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-5" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Sit&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ sit(Alive, Sittable)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="480" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-6" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-6" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Bring&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ Bring(Person, Item)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="992" width="190" height="58" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-7" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-7" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Give&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ give(Alive, Alive, Item)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="583" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-8" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-8" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Say&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ say(Person, String)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1102.5" width="190" height="58" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-9" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-9" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;FindItem&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ findItem(Alive, Storage, Item)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="768" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-11" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-11" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Zip&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ zip(Person, Clothing)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="880" width="190" height="58" as="geometry" />
@@ -142,14 +180,23 @@
         <mxCell id="K-Vc1FuilTu3pUunZq-h-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Shelve&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&amp;nbsp;+ Inventory: LinkedList&amp;lt;Item&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="882" y="160" width="190" height="70" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-16" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-16" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;ThinkToDo&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ think(Person, Action)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1322" width="190" height="58" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-17" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Class&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Story&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;- name: String&amp;nbsp;&lt;br&gt;- origin: String&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="379" y="1150" width="190" height="80" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-18" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-18" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Ask&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ ask(Alive, Alive, String, Interest)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1434" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-19" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-19" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;PutOn&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ putOn(Alive, Clothing)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1546" width="190" height="58" as="geometry" />
@@ -168,6 +215,9 @@
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-32" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;bringTogether&lt;/p&gt;&lt;hr&gt;&amp;nbsp;+ bringTogether(Couple, Item)&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-250" y="590.5" width="190" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-33" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-33" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;NewTuchi&lt;/b&gt;&lt;/p&gt;&lt;hr&gt;&amp;nbsp;- newTuchi(Conditions, Amount)&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="1658" width="190" height="70" as="geometry" />
@@ -190,8 +240,23 @@
         <mxCell id="K-Vc1FuilTu3pUunZq-h-40" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;Sittable&lt;/p&gt;&lt;hr&gt;+ getSitting()&lt;br&gt;+ addSitting(Clothing)&lt;br&gt;+ removeSitting(Clothing)&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="1257" y="-22" width="219" height="98" as="geometry" />
         </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FFFFFF;" edge="1" parent="1" source="K-Vc1FuilTu3pUunZq-h-43" target="K-Vc1FuilTu3pUunZq-h-48">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="K-Vc1FuilTu3pUunZq-h-43" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Receive&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ receive(Alive, Item)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
           <mxGeometry x="-566" y="680" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-44" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enum&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;ZIPPERSTAT&lt;/p&gt;&lt;hr&gt;NORMAL&amp;nbsp;&lt;br&gt;STUCK&lt;br&gt;OFFRAILS&lt;br&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="846" y="1053" width="100" height="99" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-45" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; line-height: 100%;&quot;&gt;Unzip&lt;/p&gt;&lt;hr style=&quot;line-height: 100%;&quot; size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; line-height: 100%;&quot;&gt;+ zip(Person, Clothing)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="-333" y="883" width="190" height="58" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="SKdy1-YhQ8MqGWsLNDs1-14" target="SKdy1-YhQ8MqGWsLNDs1-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="K-Vc1FuilTu3pUunZq-h-48" value="&lt;p style=&quot;margin: 4px 0px 0px; line-height: 100%; font-size: 28px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 4px 0px 0px; line-height: 100%; font-size: 28px;&quot;&gt;Action&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=center;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;whiteSpace=wrap;labelBackgroundColor=none;fillColor=#EEEEEE;strokeColor=#FFFFFF;fontColor=#1A1A1A;" vertex="1" parent="1">
+          <mxGeometry x="-823" y="173" width="190" height="87" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
