@@ -15,7 +15,7 @@ public class ThinkToDo extends Action {
         Random random = new Random();
         person.addDoing(this);
         int count = 0;
-        float f = 0f;
+        float f;
         while (true){
             f = random.nextFloat();
             if (f > 0.5f){

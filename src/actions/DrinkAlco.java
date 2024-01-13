@@ -1,7 +1,6 @@
 package actions;
 
 import ChildClasses.Beverage;
-import ChildClasses.OuterPlace;
 import ChildClasses.Person;
 import Enums.AMOUNT;
 import Enums.CONDITION;

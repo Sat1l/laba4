@@ -5,7 +5,6 @@ import Enums.CONDITION;
 import ParentClasses.Action;
 import ParentClasses.Object;
 
-import java.util.LinkedList;
 import java.util.Random;
 
 public class EatSedative extends Action {

@@ -1,7 +1,6 @@
 package actions;
 
 import ChildClasses.Person;
-import ChildClasses.Photo;
 import ParentClasses.Action;
 import ParentClasses.Object;
 
