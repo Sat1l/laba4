@@ -9,6 +9,10 @@ import java.util.Random;
 
 public class Zip extends Action {
 
+    public Zip(String actionName) {
+        super(actionName);
+    }
+
     public void zip(Person person, Jacket jacket) {
         if (person.getWears().contains(jacket)) {
             Random random = new Random();
@@ -16,7 +20,7 @@ public class Zip extends Action {
             ZIPPERSTAT zipperstat = jacket.getZipperstat();
             if (!jacket.getIsZipepd() && (zipperstat == ZIPPERSTAT.NORMAL)) {
                 float f = random.nextFloat();
-                if (f <= 0.1) {
+                if (f <= 0.1f) {
                     jacket.setIsZipped(true);
                     jacket.setZipperstat(ZIPPERSTAT.STUCK);
                     person.removeDoing(this);

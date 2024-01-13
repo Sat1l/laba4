@@ -6,6 +6,10 @@ import ParentClasses.Conditions;
 
 public class NewTuchi extends Action {
 
+    public NewTuchi(String actionName) {
+        super(actionName);
+    }
+
     public void newTuchi(Conditions conditions){
         int curclouds = conditions.getCloudsAmount().toInt();
         if(curclouds < 3){

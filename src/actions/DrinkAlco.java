@@ -5,13 +5,18 @@ import ChildClasses.OuterPlace;
 import ChildClasses.Person;
 import Enums.AMOUNT;
 import Enums.CONDITION;
+import Interfaces.hasAlcohol;
 import ParentClasses.Action;
 
 public class DrinkAlco extends Action {
+    public DrinkAlco(String actionName) {
+        super(actionName);
+    }
+
     public void drinkAlco(Person person, Beverage beverage, AMOUNT amount){
         person.addDoing(this);
-        if (person.getLocation() instanceof OuterPlace) {
-            OuterPlace outerPlace = (OuterPlace) person.getLocation();
+        if (person.getLocation() instanceof hasAlcohol) {
+//            OuterPlace outerPlace = (OuterPlace) person.getLocation();
             int alcoholAmount = outerPlace.getAlcoholAmount().toInt();
             if (alcoholAmount > 0){
                 if (alcoholAmount - amount.toInt() > 0){

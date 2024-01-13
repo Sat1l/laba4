@@ -15,11 +15,29 @@ public class Person extends Alive implements CanWear, HasInventory {
     private LinkedList<Object> inventory;
 
     private Person partner;
-    public Person(String name, Location location, Person partner) {
+    public Person(String name, Location location) {
         super(name, location);
         this.wears = new LinkedList<Clothing>();
         this.inventory = new LinkedList<Object>();
-        this.partner = partner;
+    }
+
+    public Person getPartner(){
+        return partner;
+    }
+
+    public void setPartner(Person newPartner){
+        this.partner = newPartner;
+    }
+
+    @Override
+    public void setLocation(Location newLocation){
+        this.location = newLocation;
+        for(Object item : this.inventory){
+            item.setLocation(newLocation);
+        }
+        for (Clothing clothing : this.wears){
+            clothing.setLocation(newLocation);
+        }
     }
 
     @Override
@@ -30,6 +48,7 @@ public class Person extends Alive implements CanWear, HasInventory {
     @Override
     public void addWears(Clothing toAdd) {
         this.wears.add(toAdd);
+        toAdd.setLocation(this.location);
     }
 
     @Override
@@ -45,6 +64,7 @@ public class Person extends Alive implements CanWear, HasInventory {
     @Override
     public void addInventory(Object toAdd) {
         this.inventory.add(toAdd);
+        toAdd.setLocation(this.location);
     }
 
     @Override

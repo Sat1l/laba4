@@ -2,6 +2,8 @@ package Enums;
 
 public enum STRENGTH {
 
+    NONE("отсутствует"),
+
     WEAK("слабый"),
 
     MEDIUM("средний"),

@@ -8,7 +8,9 @@ public enum DIRECTION {
 
     SOUTH("юг"),
 
-    WEST("запад");
+    WEST("запад"),
+
+    NONE("отсутствует");
 
     private final String direction;
 

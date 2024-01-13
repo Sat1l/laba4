@@ -6,6 +6,10 @@ import ParentClasses.Action;
 
 public class PutOn extends Action {
 
+    public PutOn(String actionName) {
+        super(actionName);
+    }
+
     public void putOn(Person person, Clothing clothing){
         person.addDoing(this);
         person.addWears(clothing);

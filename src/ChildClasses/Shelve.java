@@ -10,9 +10,9 @@ public class Shelve extends Object implements HasInventory {
 
     private LinkedList<Object> inventory;
 
-    public Shelve(String name, LinkedList<Object> inventory, Location location){
+    public Shelve(String name, Location location){
         super(name, location);
-        this.inventory = inventory;
+        this.inventory = new LinkedList<Object>();
     }
 
     @Override

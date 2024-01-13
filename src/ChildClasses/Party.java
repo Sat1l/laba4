@@ -2,23 +2,15 @@ package ChildClasses;
 
 import Enums.AMOUNT;
 import Interfaces.hasAlcohol;
-import Interfaces.hasOccasion;
 import ParentClasses.Location;
 
-public class LadlowHome extends Location  implements hasOccasion, hasAlcohol {
-    private String occasion;
+public class Party extends Location implements hasAlcohol {
 
-    private AMOUNT alcoholAmount;
+    AMOUNT alcoholAmount;
 
-    public LadlowHome(String locname, String occasion, AMOUNT alcoholAmount){
+    public Party(String locname, AMOUNT alcoholAmount) {
         super(locname);
-        this.occasion = occasion;
         this.alcoholAmount = alcoholAmount;
-    }
-
-    @Override
-    public String getOccasion() {
-        return occasion;
     }
 
     @Override

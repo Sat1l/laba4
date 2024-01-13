@@ -7,6 +7,10 @@ import java.util.Random;
 
 public class ThinkToDo extends Action {
 
+    public ThinkToDo(String actionName) {
+        super(actionName);
+    }
+
     public boolean thinkToDo(Person person, Action action){
         Random random = new Random();
         person.addDoing(this);
@@ -14,7 +18,7 @@ public class ThinkToDo extends Action {
         float f = 0f;
         while (true){
             f = random.nextFloat();
-            if (f > 0.5){
+            if (f > 0.5f){
                 System.out.println(person.getName() + " decided to " + action.toString());
                 person.removeDoing(action);
                 return true;

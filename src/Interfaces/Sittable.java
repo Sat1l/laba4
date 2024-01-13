@@ -1,15 +1,14 @@
 package Interfaces;
 
-import ChildClasses.Person;
-
+import ParentClasses.Alive;
 import java.util.LinkedList;
 
 public interface Sittable {
 
-    LinkedList<Person> getSitting();
+    LinkedList<Alive> getSitting();
 
-    void addSitting(Person toAdd);
+    void addSitting(Alive toAdd);
 
-    void removeSitting(Person toRemove);
+    void removeSitting(Alive toRemove);
 
 }

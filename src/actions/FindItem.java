@@ -9,6 +9,10 @@ import java.util.Random;
 
 public class FindItem extends Action {
 
+    public FindItem(String actionName) {
+        super(actionName);
+    }
+
     public void findItem(Person person, HasInventory somethingWithInventory, Object objectToFind){
         Random random = new Random();
         person.addDoing(this);
@@ -16,7 +20,7 @@ public class FindItem extends Action {
         float f = random.nextFloat();
         while (true) {
             f = random.nextFloat();
-            if (f > 0.5) {
+            if (f > 0.5f) {
                if (somethingWithInventory.getInventory().contains(objectToFind) && (count < 3)){
                    somethingWithInventory.removeInventory(objectToFind);
                    person.addInventory(objectToFind);
@@ -24,6 +28,7 @@ public class FindItem extends Action {
                } else {
                    person.removeDoing(this);
                    System.out.println("Either person gave up or the item is not there");
+                   break;
                }
 
             } else {

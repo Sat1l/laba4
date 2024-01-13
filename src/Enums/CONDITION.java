@@ -2,11 +2,13 @@ package Enums;
 
 public enum CONDITION {
 
-    NORMAL("нормальный"),
+    NORMAL("normal"),
 
-    DRUNK("пьяный"),
+    DRUNK("drunk"),
 
-    CALM("спокойный");
+    CALM("calm"),
+
+    BUYANIT("buyanit");
 
     private final String condition;
 

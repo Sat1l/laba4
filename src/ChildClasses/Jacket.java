@@ -11,6 +11,7 @@ public class Jacket extends Clothing{
 
     public Jacket(String name, Boolean isZipped, Location location) {
         super(name, location);
+        this.isZipped = isZipped;
         this.zipperstat = ZIPPERSTAT.NORMAL;
     }
 
@@ -23,7 +24,7 @@ public class Jacket extends Clothing{
     }
 
     public ZIPPERSTAT getZipperstat(){
-        return this.getZipperstat();
+        return zipperstat;
     }
 
     public void setZipperstat(ZIPPERSTAT zipperstat){

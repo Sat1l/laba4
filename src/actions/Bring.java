@@ -9,7 +9,11 @@ import java.util.Random;
 
 public class Bring extends Action {
 
-     void bring(Person person, Object object, Location location){
+    public Bring(String actionName) {
+        super(actionName);
+    }
+
+    public void bring(Person person, Object object, Location location){
         if (person.getInventory().contains(object)){
             person.addDoing(this);
             Random random = new Random();
@@ -18,10 +22,12 @@ public class Bring extends Action {
                 person.removeInventory(object);
                 person.removeDoing(this);
                 location.addObject(object);
+                person.setLocation(location);
                 System.out.println(person.getName() + " brought " + object.getName() + " to " + location.getLocname());
             } else {
                 person.removeInventory(object);
                 person.removeDoing(this);
+                person.setLocation(location);
                 System.out.println(person.getName() + " lost " + object.getName() + " on its way to the " + location.getLocname());
             }
         }

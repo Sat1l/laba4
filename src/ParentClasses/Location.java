@@ -25,6 +25,12 @@ public class Location {
         this.objects.add(object);
     }
 
+
+    @Override
+    public String toString(){
+        return locname;
+    }
+
     @Override
     public int hashCode(){
         int result = 3;
@@ -32,12 +38,11 @@ public class Location {
         return result;
     }
 
-    @Override
-    public boolean equals(Location toeq){ //toeq = to *calculate if* equals
-        if (this == toeq) return true;
-        if (toeq == null || getClass() != toeq.getClass()) return false;
-        Location sec = (Location) toeq;
-        return locname == null ? sec.locname == null : locname.equals(sec.locname);
-    }
-
+//    @Override
+//    public boolean equals(Location toeq){ //toeq = to *calculate if* equals
+//        if (this == toeq) return true;
+//        if (toeq == null || getClass() != toeq.getClass()) return false;
+//        Location sec = (Location) toeq;
+//        return locname == null ? sec.locname == null : locname.equals(sec.locname);
+//    }
 }
