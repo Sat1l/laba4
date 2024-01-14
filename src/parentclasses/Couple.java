@@ -6,9 +6,9 @@ public class Couple {
 
     private String name;
 
-    private Person husband;
+    private final Person husband;
 
-    private Person wife;
+    private final Person wife;
 
     public Couple(String name, Person husband, Person wife){
         this.name = name;

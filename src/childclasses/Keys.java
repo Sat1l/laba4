@@ -4,7 +4,7 @@ import parentclasses.Location;
 import parentclasses.UObject;
 
 public class Keys extends UObject {
-    private String whatFor;
+    private final String whatFor;
 
     public Keys(String name, String whatFor, Location location){
         super(name, location);

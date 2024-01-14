@@ -8,7 +8,7 @@ import java.util.LinkedList;
 
 public class Shelve extends UObject implements HasInventory {
 
-    private LinkedList<UObject> inventory;
+    private final LinkedList<UObject> inventory;
 
     public Shelve(String name, Location location){
         super(name, location);

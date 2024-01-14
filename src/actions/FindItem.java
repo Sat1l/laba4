@@ -33,6 +33,7 @@ public class FindItem extends Action {
                }
 
             } else {
+                System.out.println(person.getName() + " searches for " + UObjectToFind.getName() + " on/in a " + somethingWithInventory.getName());
                 count += 1;
                 try {
                     Thread.sleep(1000);

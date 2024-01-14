@@ -10,7 +10,7 @@ public enum ZIPPERSTAT {
 
     private final String zipperStat;
 
-    private ZIPPERSTAT(String zipperStat){
+    ZIPPERSTAT(String zipperStat){
         this.zipperStat = zipperStat;
     }
 

@@ -10,9 +10,9 @@ import java.util.LinkedList;
 
 public class Person extends Alive implements CanWear, HasInventory {
 
-    private LinkedList<Clothing> wears;
+    private final LinkedList<Clothing> wears;
 
-    private LinkedList<UObject> inventory;
+    private final LinkedList<UObject> inventory;
 
     private Person partner;
     public Person(String name, Location location) {

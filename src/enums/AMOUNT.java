@@ -14,7 +14,7 @@ public enum AMOUNT {
 
     private final int intAmount;
 
-    private AMOUNT(String strAmount, int intAmount){
+    AMOUNT(String strAmount, int intAmount){
         this.strAmount = strAmount;
         this.intAmount = intAmount;
     }

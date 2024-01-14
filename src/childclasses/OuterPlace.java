@@ -7,7 +7,7 @@ import parentclasses.Location;
 
 public class OuterPlace extends Location implements  hasOccasion, hasAlcohol {
 
-    private String occasion;
+    private final String occasion;
 
     private AMOUNT alcoholAmount;
 

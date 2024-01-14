@@ -17,9 +17,9 @@ public class Say extends Action {
         for (String word : words) {
             System.out.print(" " + word);
             try {
-                Thread.sleep(300);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e); //autocompleted code not me though
             }
         }
         person.removeDoing(this);

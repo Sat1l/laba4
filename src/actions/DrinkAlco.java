@@ -22,7 +22,7 @@ public class DrinkAlco extends Action {
                 if (alcoholAmount - amount.toInt() > 0){
                     locWithAlco.setAlcoholAmount(AMOUNT.fromInt(alcoholAmount - amount.toInt()));
                     person.setCondition(CONDITION.DRUNK);
-                    System.out.println(person.getName() + " drank " + amount.toString() + " " + beverage.getTare() + " " + beverage.getName() + ", and now " + person.getCondition().toString());
+                    System.out.println(person.getName() + " drank " + amount + " " + beverage.getTare() + " " + beverage.getName() + ", and now " + person.getCondition().toString());
                     System.out.println("At " + locWithAlco.getLocname() + " there is " + locWithAlco.getAlcoholAmount() + " of alcohol");
                 } else if (alcoholAmount - amount.toInt() <= 0) {
                     locWithAlco.setAlcoholAmount(AMOUNT.NONE);

@@ -12,7 +12,7 @@ public enum STRENGTH {
 
     private final String strength;
 
-    private STRENGTH(String strength){
+    STRENGTH(String strength){
         this.strength = strength;
     }
 

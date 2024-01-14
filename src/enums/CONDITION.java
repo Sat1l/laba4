@@ -12,7 +12,7 @@ public enum CONDITION {
 
     private final String condition;
 
-    private CONDITION(String condition){
+    CONDITION(String condition){
         this.condition = condition;
     }
 

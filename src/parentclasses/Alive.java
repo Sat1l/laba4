@@ -6,11 +6,11 @@ import java.util.LinkedList;
 
 public abstract class Alive {
 
-    private String name;
+    private final String name;
 
     private CONDITION condition = CONDITION.NORMAL;
 
-    private LinkedList<Action> doing;
+    private final LinkedList<Action> doing;
 
     protected Location location;
 

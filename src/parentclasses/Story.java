@@ -2,9 +2,9 @@ package parentclasses;
 
 public class Story {
 
-    public String name;
+    public final String name;
 
-    public String origin;
+    public final String origin;
 
     public Story(String name, String origin){
         this.name = name;

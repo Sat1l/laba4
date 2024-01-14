@@ -8,7 +8,7 @@ public enum INTEREST {
 
     private final String interest;
 
-    private INTEREST(String interest){
+    INTEREST(String interest){
         this.interest = interest;
     }
 

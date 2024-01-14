@@ -2,7 +2,7 @@ package parentclasses;
 
 public class Action {
 
-    String actionName;
+    final String actionName;
     public Action(String actionName){
         this.actionName = actionName;
     }

@@ -14,7 +14,7 @@ public enum DIRECTION {
 
     private final String direction;
 
-    private DIRECTION(String direction){
+    DIRECTION(String direction){
         this.direction = direction;
     }
 

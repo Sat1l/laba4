@@ -2,7 +2,7 @@ package parentclasses;
 
 public class UObject {
 
-    protected String name;
+    protected final String name;
 
     protected Location location;
 

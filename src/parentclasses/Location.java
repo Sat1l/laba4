@@ -43,9 +43,7 @@ public class Location {
         if (Objects.equals(locname, location.getLocname())) return false;
 
         // Check for null and compare objects field
-        if (!Objects.equals(UObjects, location.UObjects)) return false;
-
-        return true;
+        return Objects.equals(UObjects, location.UObjects);
     }
 
     @Override

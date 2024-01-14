@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 public class Furniture extends UObject implements Sittable {
 
-    private LinkedList<Alive> sitting;
+    private final LinkedList<Alive> sitting;
 
     public Furniture(String name, Location location){
         super(name, location);

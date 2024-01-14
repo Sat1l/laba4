@@ -4,7 +4,7 @@ import enums.AMOUNT;
 import interfaces.hasOccasion;
 
 public class LadlowHome extends LocWithAlco  implements hasOccasion {
-    private String occasion;
+    private final String occasion;
 
     private AMOUNT alcoholAmount;
 
