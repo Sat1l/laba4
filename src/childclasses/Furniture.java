@@ -13,7 +13,7 @@ public class Furniture extends UObject implements Sittable {
 
     public Furniture(String name, Location location){
         super(name, location);
-        this.sitting = new LinkedList<Alive>();
+        this.sitting = new LinkedList<>();
     }
 
     @Override

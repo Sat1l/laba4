@@ -84,8 +84,11 @@ public class Main {
 
         //setting up the couples
         Couple mastertons = new Couple("Mastertons", steveMasterton, msMasterton);
+        steveMasterton.setPartner(msMasterton);
         Couple dennikers = new Couple("Dennikers", mrDenniker, msDenniker);
+        mrDenniker.setPartner(msDenniker);
         Couple goldmans = new Couple("Goldmans", mrGoldman, msGoldman);
+        mrGoldman.setPartner(msGoldman);
 
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);

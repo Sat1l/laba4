@@ -20,9 +20,9 @@ public class EatSedative extends Action {
             Random random = new Random();
             float f = random.nextFloat();
             person.removeInventory(res);
-            if (f > 0.8f){
+            if (f > 0.1f){
                 person.setCondition(CONDITION.CALM);
-                System.out.println(person.getName() + " is now buyanit");
+                System.out.println(person.getName() + " is now calm");
             } else {
                 person.setCondition(CONDITION.BUYANIT);
                 System.out.println(person.getName() + " is now buyanit");

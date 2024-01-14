@@ -27,6 +27,7 @@ public class Person extends Alive implements CanWear, HasInventory {
 
     public void setPartner(Person newPartner){
         this.partner = newPartner;
+        newPartner.partner = this;
     }
 
     @Override
