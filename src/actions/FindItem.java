@@ -1,9 +1,9 @@
 package actions;
 
-import ChildClasses.Person;
-import Interfaces.HasInventory;
-import ParentClasses.Action;
-import ParentClasses.Object;
+import childclasses.Person;
+import childclasses.Shelve;
+import parentclasses.Action;
+import parentclasses.UObject;
 
 import java.util.Random;
 
@@ -13,17 +13,18 @@ public class FindItem extends Action {
         super(actionName);
     }
 
-    public void findItem(Person person, HasInventory somethingWithInventory, Object objectToFind){
+    public void findItem(Person person, Shelve somethingWithInventory, UObject UObjectToFind){
         Random random = new Random();
         person.addDoing(this);
         int count = 0;
         float f;
         while (true) {
             f = random.nextFloat();
-            if (f > 0.5f) {
-               if (somethingWithInventory.getInventory().contains(objectToFind) && (count < 3)){
-                   somethingWithInventory.removeInventory(objectToFind);
-                   person.addInventory(objectToFind);
+            if (f > 0.8f) {
+               if (somethingWithInventory.getInventory().contains(UObjectToFind) && (count < 3)){
+                   somethingWithInventory.removeInventory(UObjectToFind);
+                   person.addInventory(UObjectToFind);
+                   System.out.println(person.getName() + " found " + UObjectToFind.getName() + " on/in a " + somethingWithInventory.getName());
                    break;
                } else {
                    person.removeDoing(this);

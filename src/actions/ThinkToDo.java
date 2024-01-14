@@ -1,7 +1,7 @@
 package actions;
 
-import ChildClasses.Person;
-import ParentClasses.Action;
+import childclasses.Person;
+import parentclasses.Action;
 
 import java.util.Random;
 

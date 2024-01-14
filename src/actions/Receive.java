@@ -1,8 +1,8 @@
 package actions;
 
-import ChildClasses.Person;
-import ParentClasses.Action;
-import ParentClasses.Object;
+import childclasses.Person;
+import parentclasses.Action;
+import parentclasses.UObject;
 
 public class Receive extends Action {
 
@@ -10,9 +10,9 @@ public class Receive extends Action {
         super(actionName);
     }
 
-    public void receive(Person receiver, Object object){
+    public void receive(Person receiver, UObject UObject){
         receiver.addDoing(this);
-        receiver.addInventory(object);
+        receiver.addInventory(UObject);
         receiver.removeDoing(this);
     }
 

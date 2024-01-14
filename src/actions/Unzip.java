@@ -1,9 +1,9 @@
 package actions;
 
-import ChildClasses.Jacket;
-import ChildClasses.Person;
-import Enums.ZIPPERSTAT;
-import ParentClasses.Action;
+import childclasses.Jacket;
+import childclasses.Person;
+import enums.ZIPPERSTAT;
+import parentclasses.Action;
 
 import java.util.Random;
 

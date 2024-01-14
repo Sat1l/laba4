@@ -1,7 +1,7 @@
 package actions;
 
-import ChildClasses.Person;
-import ParentClasses.Action;
+import childclasses.Person;
+import parentclasses.Action;
 
 public class Say extends Action {
 
@@ -17,7 +17,7 @@ public class Say extends Action {
         for (String word : words) {
             System.out.print(" " + word);
             try {
-                Thread.sleep(500);
+                Thread.sleep(300);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

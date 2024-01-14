@@ -1,9 +1,9 @@
 package actions;
 
-import ChildClasses.Person;
-import Enums.CONDITION;
-import ParentClasses.Action;
-import ParentClasses.Object;
+import childclasses.Person;
+import enums.CONDITION;
+import parentclasses.Action;
+import parentclasses.UObject;
 
 import java.util.Random;
 
@@ -14,7 +14,7 @@ public class EatSedative extends Action {
     }
 
     public void eatSedative(Person person) {
-        Object res = hasSedative(person);
+        UObject res = hasSedative(person);
         if(res != null){
             person.addDoing(this);
             Random random = new Random();
@@ -22,15 +22,18 @@ public class EatSedative extends Action {
             person.removeInventory(res);
             if (f > 0.8f){
                 person.setCondition(CONDITION.CALM);
+                System.out.println(person.getName() + " is now buyanit");
             } else {
                 person.setCondition(CONDITION.BUYANIT);
+                System.out.println(person.getName() + " is now buyanit");
             }
+            person.removeDoing(this);
         }
     }
-    private Object hasSedative(Person person){
-        Object toret = null;
-        for (Object item : person.getInventory()) {
-            if (item.toString().equals("Sedative")) {
+    private UObject hasSedative(Person person){
+        UObject toret = null;
+        for (UObject item : person.getInventory()) {
+            if (item.getName().equalsIgnoreCase("sedative")) {
                 toret = item;
                 break;
             }

@@ -1,8 +1,8 @@
 package actions;
 
-import ChildClasses.Person;
-import Interfaces.Sittable;
-import ParentClasses.Action;
+import childclasses.Person;
+import interfaces.Sittable;
+import parentclasses.Action;
 
 public class Sit extends Action {
 

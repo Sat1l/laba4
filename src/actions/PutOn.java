@@ -1,8 +1,8 @@
 package actions;
 
-import ChildClasses.Clothing;
-import ChildClasses.Person;
-import ParentClasses.Action;
+import childclasses.Clothing;
+import childclasses.Person;
+import parentclasses.Action;
 
 public class PutOn extends Action {
 

@@ -1,22 +1,21 @@
 package actions;
 
-import ChildClasses.Person;
-import ParentClasses.Action;
-import ParentClasses.Object;
+import childclasses.Person;
+import parentclasses.Action;
+import parentclasses.UObject;
 
 public class Holding extends Action {
 
-    String actionName;
-    Object heldObject;
+    UObject heldUObject;
 
     public Holding(String actionName) {
         super(actionName);
     }
 
-    public void holding(Person person, Object object){
-        if(person.getInventory().contains(object)){
+    public void holding(Person person, UObject UObject){
+        if(person.getInventory().contains(UObject)){
             person.addDoing(this);
-            heldObject = object;
+            heldUObject = UObject;
         } else {
             System.out.println("nothing to hold!");
         }
@@ -24,7 +23,7 @@ public class Holding extends Action {
 
     @Override
     public String toString(){
-        return this.actionName + " " + this.heldObject;
+        return super.toString() + " " + heldUObject.getName();
     }
 
 }

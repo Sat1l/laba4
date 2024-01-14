@@ -1,8 +1,8 @@
 package actions;
 
-import ChildClasses.Person;
-import Enums.INTEREST;
-import ParentClasses.Action;
+import childclasses.Person;
+import enums.INTEREST;
+import parentclasses.Action;
 
 public class Ask extends Action {
 

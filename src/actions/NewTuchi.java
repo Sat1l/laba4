@@ -1,8 +1,8 @@
 package actions;
 
-import Enums.AMOUNT;
-import ParentClasses.Action;
-import ParentClasses.Conditions;
+import enums.AMOUNT;
+import parentclasses.Action;
+import parentclasses.Conditions;
 
 public class NewTuchi extends Action {
 
@@ -12,11 +12,12 @@ public class NewTuchi extends Action {
 
     public void newTuchi(Conditions conditions){
         int curclouds = conditions.getCloudsAmount().toInt();
-        if(curclouds < 3){
-            conditions.setCloudsAmount(AMOUNT.fromInt(curclouds++));
-            System.out.println("New clouds came up and now there is " + conditions.getCloudsAmount().toString() + " of them");
+        if(curclouds < 2){
+            conditions.setCloudsAmount(AMOUNT.PLENTY);
+//            System.out.println(curclouds++);
+            System.out.println("New tuchu came up and now there is " + conditions.getCloudsAmount().toString() + " of them");
         } else {
-            System.out.println("New clouds came up but there is already A LOT of them");
+            System.out.println("New tuchi came up but there is already A LOT of them");
         }
     }
 }

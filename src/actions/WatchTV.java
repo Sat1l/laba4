@@ -1,12 +1,10 @@
 package actions;
 
-import ChildClasses.Person;
-import ChildClasses.TV;
-import ParentClasses.Action;
+import childclasses.Person;
+import childclasses.TV;
+import parentclasses.Action;
 
 public class WatchTV extends Action {
-
-    String actionName;
 
     TV watchedTV;
 
@@ -14,13 +12,13 @@ public class WatchTV extends Action {
         super(actionName);
     }
 
-    public void watchTV(Person viewer, TV tv){
+    public void watchTV(Person viewer, TV tv) {
         viewer.addDoing(this);
         watchedTV = tv;
     }
 
     @Override
-    public String toString(){
-        return this.actionName + " " + this.watchedTV;
+    public String toString() {
+        return super.toString() + " " + watchedTV.getName();
     }
 }

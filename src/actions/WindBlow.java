@@ -1,9 +1,9 @@
 package actions;
 
-import Enums.DIRECTION;
-import Enums.STRENGTH;
-import ParentClasses.Action;
-import ParentClasses.Conditions;
+import enums.DIRECTION;
+import enums.STRENGTH;
+import parentclasses.Action;
+import parentclasses.Conditions;
 
 public class WindBlow extends Action {
 

@@ -1,9 +1,9 @@
 package actions;
 
-import ChildClasses.Journal;
-import ChildClasses.Person;
-import Enums.INTEREST;
-import ParentClasses.Action;
+import childclasses.Journal;
+import childclasses.Person;
+import enums.INTEREST;
+import parentclasses.Action;
 
 public class FlipPages extends Action {
     public FlipPages(String actionName) {

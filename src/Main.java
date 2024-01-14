@@ -1,7 +1,7 @@
-import ChildClasses.*;
-import Enums.*;
-import ParentClasses.*;
-import ParentClasses.Object;
+import childclasses.*;
+import enums.*;
+import parentclasses.*;
+import parentclasses.UObject;
 import actions.*;
 
 public class Main {
@@ -17,22 +17,22 @@ public class Main {
         Party party = new Party("Party", AMOUNT.ALOT);
 
         //setting up items
-        Furniture chairAtHome = new Furniture("Chair", home);
-        Jacket louisJacket = new Jacket("Jacket", false, home);
-        Object sedative = new Object("sedative", home);
+        Furniture chairAtHome = new Furniture("chair", home);
+        Jacket louisJacket = new Jacket("jacket", false, home);
+        UObject sedative = new UObject("sedative", home);
         Journal rachelsJournal = new Journal("journal", home);
         TV tvAtHome = new TV("tv", "little house on the prairie", home);
         Photo gadgesPhoto = new Photo("Gadges photo", "Gadge", home);
-        Keys civicKeys = new Keys("Keys", "Civic", home);
-        Beverage beer = new Beverage("Beer", "Pint", Boolean.TRUE, ladlowHome);
-        Shelve shelveAtHome = new Shelve("Shelve", home);
-        Object potWithBurgers = new Object("Pot with burgers", somewhere);
-        Object quitch = new Object("quitch", somewhere);
-        Object canendHam = new Object("Canned ham", somewhere);
-        Object coldMaC = new Object("Cold meat and cheeze", somewhere);
-        Object cheeze = new Object("Wheel of Mister Retha", somewhere);
-        Object pie = new Object("Sweet pie", somewhere);
-        Object apples = new Object("Bag of apples", somewhere);
+        Keys civicKeys = new Keys("keys", "Civic", home);
+        Beverage beer = new Beverage("beer", "pint", Boolean.TRUE, ladlowHome);
+        Shelve shelveAtHome = new Shelve("shelve", home);
+        UObject potWithBurgers = new UObject("Pot with burgers", somewhere);
+        UObject quitch = new UObject("quitch", somewhere);
+        UObject canendHam = new UObject("canned ham", somewhere);
+        UObject coldMaC = new UObject("cold meat and cheeze", somewhere);
+        UObject cheeze = new UObject("wheel of Mister Retha", somewhere);
+        UObject pie = new UObject("sweet pie", somewhere);
+        UObject apples = new UObject("bag of apples", somewhere);
 
         //setting up the actions
         Ask ask = new Ask("asking");
@@ -66,23 +66,27 @@ public class Main {
         ellie.addInventory(gadgesPhoto);
         holding.holding(ellie, gadgesPhoto);
         Person steveMasterton = new Person("Steve Masterton", somewhere);
+        steveMasterton.addInventory(potWithBurgers);
         Person msMasterton = new Person("Miss Masterton", somewhere);
         Person charlton = new Person("Charlton", somewhere);
+        charlton.addInventory(quitch);
         Person mrDenniker = new Person("mrDenniker", somewhere);
+        mrDenniker.addInventory(canendHam);
         Person msDenniker = new Person("msDenniker", somewhere);
         Person mrGoldman = new Person("mrGoldman", somewhere);
+        mrGoldman.addInventory(coldMaC);
         Person msGoldman = new Person("msGoldman", somewhere);
         Person jude = new Person("Jude", somewhere);
+        jude.addInventory(cheeze);
         Person missDanbridge = new Person("Miss Danbridge", somewhere);
+        missDanbridge.addInventory(pie);
         Person hardu = new Person("Surendra Hardu", somewhere);
+        hardu.addInventory(apples);
 
         //setting up the couples
         Couple mastertons = new Couple("Mastertons", steveMasterton, msMasterton);
-        steveMasterton.addInventory(potWithBurgers);
         Couple dennikers = new Couple("Dennikers", mrDenniker, msDenniker);
-        mrDenniker.addInventory(canendHam);
         Couple goldmans = new Couple("Goldmans", mrGoldman, msGoldman);
-        mrGoldman.addInventory(coldMaC);
 
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);
@@ -95,18 +99,22 @@ public class Main {
         crying.crying(rachel);
         give.give(louis, rachel, sedative);
         eatSedativePast.eatSedative(rachel);
+        System.out.println("*now*");
         if(rachel.getCondition() == CONDITION.CALM){
             rachel.addInventory(rachelsJournal);
             sit.sit(rachel, chairAtHome);
             flipPages.flipPages(rachel, rachelsJournal, INTEREST.CARELESS);
+        } else {
+            System.out.println(rachel.getName() + " is "+ rachel.getCondition());
         }
-        System.out.println(ellie.getDoing().toString());
+        System.out.println(rachel.getDoingString());
+        System.out.println(ellie.getDoingString());
         say.say(louis, "I'll go buy some pizza \n");
         say.say(rachel, "Haven't you eat earlier today? \n");
         say.say(louis, "I didn't want to eat then \n");
 
         locManager.setStoryLocation(ladlowHome);
-        System.out.println(ladlowHome.getLocname() + ladlowHome.getOccasion());
+        System.out.println(ladlowHome.getLocname() + " " +  ladlowHome.getOccasion());
         louis.setLocation(ladlowHome);
         rachel.setLocation(ladlowHome);
         bringTogether.bringTogether(mastertons, potWithBurgers, ladlowHome);
@@ -118,12 +126,15 @@ public class Main {
         bring.bring(hardu, apples, ladlowHome);
 
 
-//todo
-//        if (ladlowHome.equals(party)){
-//            System.out.println("they basically have a party at ladlows home");
-//        } else {
-//
-//        }
+        if (ladlowHome.equals(party)){
+            System.out.println("they basically have a party at ladlows home");
+        } else {
+            if (party.getAlcoholAmount().toInt() > ladlowHome.getAlcoholAmount().toInt()){
+                System.out.println(ladlowHome.getLocname() + " is almost similar to a " + party.getLocname() + ", but has less alcohol ");
+            } else {
+                System.out.println(ladlowHome.getLocname() + " is almost similar to a " + party.getLocname() + ", but has same/even more alcohol");
+            }
+        }
 
         drinkAlco.drinkAlco(louis, beer, AMOUNT.PLENTY);
         thinkToDo.thinkToDo(louis, tellStories);
