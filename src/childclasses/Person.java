@@ -17,8 +17,8 @@ public class Person extends Alive implements CanWear, HasInventory {
     private Person partner;
     public Person(String name, Location location) {
         super(name, location);
-        this.wears = new LinkedList<Clothing>();
-        this.inventory = new LinkedList<UObject>();
+        this.wears = new LinkedList<>();
+        this.inventory = new LinkedList<>();
     }
 
     public Person getPartner(){

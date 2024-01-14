@@ -11,7 +11,7 @@ public class Location {
 
     public Location(String locname){
         this.locname = locname;
-        this.UObjects = new LinkedList<UObject>();
+        this.UObjects = new LinkedList<>();
     }
 
     public String getLocname(){

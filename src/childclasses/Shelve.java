@@ -12,7 +12,7 @@ public class Shelve extends UObject implements HasInventory {
 
     public Shelve(String name, Location location){
         super(name, location);
-        this.inventory = new LinkedList<UObject>();
+        this.inventory = new LinkedList<>();
     }
 
     @Override

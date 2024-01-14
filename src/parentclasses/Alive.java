@@ -16,7 +16,7 @@ public abstract class Alive {
 
     public Alive(String name, Location location){
         this.name = name;
-        this.doing = new LinkedList<Action>();
+        this.doing = new LinkedList<>();
         this.location = location;
     }
 
