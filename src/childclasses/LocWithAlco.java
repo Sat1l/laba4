@@ -1,6 +1,5 @@
 package childclasses;
 
-import enums.Amount;
 import interfaces.HasAlcohol;
 import parentclasses.Location;
 

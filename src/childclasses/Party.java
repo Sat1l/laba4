@@ -1,9 +1,5 @@
 package childclasses;
 
-import enums.Amount;
-import interfaces.HasAlcohol;
-import parentclasses.Location;
-
 import java.util.LinkedList;
 
 public class Party extends LocWithAlco {

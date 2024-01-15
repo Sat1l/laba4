@@ -1,8 +1,6 @@
 package interfaces;
 
 import childclasses.Beverage;
-import enums.Amount;
-
 import java.util.LinkedList;
 
 public interface HasAlcohol {

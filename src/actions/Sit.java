@@ -2,9 +2,7 @@ package actions;
 
 import childclasses.Furniture;
 import childclasses.Person;
-import interfaces.Sittable;
 import parentclasses.Action;
-import parentclasses.UObject;
 
 public class Sit extends Action {
 

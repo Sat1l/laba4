@@ -1,6 +1,5 @@
 package childclasses;
 
-import enums.Amount;
 import interfaces.HasOccasion;
 
 public class LadlowHome extends LocWithAlco  implements HasOccasion {
