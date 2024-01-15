@@ -2,7 +2,7 @@ package actions;
 
 import childclasses.Jacket;
 import childclasses.Person;
-import enums.ZIPPERSTAT;
+import enums.ZipperStat;
 import parentclasses.Action;
 
 import java.util.Random;
@@ -17,12 +17,12 @@ public class Unzip extends Action {
         if (person.getWears().contains(jacket)) {
             Random random = new Random();
             person.addDoing(this);
-            ZIPPERSTAT zipperstat = jacket.getZipperstat();
-            if (jacket.getIsZipepd() && (zipperstat == ZIPPERSTAT.NORMAL)) {
+            ZipperStat zipperstat = jacket.getZipperstat();
+            if (jacket.getIsZipepd() && (zipperstat == ZipperStat.NORMAL)) {
                 float f = random.nextFloat();
                 if (f <= 0.1f) {
                     jacket.setIsZipped(false);
-                    jacket.setZipperstat(ZIPPERSTAT.OFFRAILS);
+                    jacket.setZipperstat(ZipperStat.OFFRAILS);
                     person.removeDoing(this);
 
                     System.out.println("The " + jacket.getName() + " zip got off the rails!");

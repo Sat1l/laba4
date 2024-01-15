@@ -1,26 +1,32 @@
 package childclasses;
 
-import enums.AMOUNT;
-import interfaces.hasAlcohol;
+import enums.Amount;
+import interfaces.HasAlcohol;
 import parentclasses.Location;
 
-public class Party extends Location implements hasAlcohol {
+import java.util.LinkedList;
 
-    AMOUNT alcoholAmount;
+public class Party extends LocWithAlco {
 
-    public Party(String locname, AMOUNT alcoholAmount) {
+    private LinkedList<Beverage> beverages;
+
+    public Party(String locname) {
         super(locname);
-        this.alcoholAmount = alcoholAmount;
     }
 
     @Override
-    public AMOUNT getAlcoholAmount(){
-        return alcoholAmount;
+    public LinkedList<Beverage> getAlcohol(){
+        return beverages;
     }
 
     @Override
-    public void setAlcoholAmount(AMOUNT newAmount){
-        this.alcoholAmount = newAmount;
+    public void addAlcohol(Beverage beverageToAdd) {
+        this.beverages.add(beverageToAdd);
+    }
+
+    @Override
+    public void removeAlcohol(Beverage beverageToRemove) {
+        this.beverages.remove(beverageToRemove);
     }
 
 }

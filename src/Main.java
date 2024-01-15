@@ -6,25 +6,27 @@ import actions.*;
 public class Main {
     public static void main(String[] args){
 
-        Conditions conditions = new Conditions(AMOUNT.NONE, STRENGTH.WEAK, DIRECTION.WEST);
+        Conditions conditions = new Conditions(Amount.NONE, Strength.WEAK, Direction.WEST);
         Location home = new Location("home");
         Location somewhere = new Location("somewhere"); //used for the loc that is not given/left outta text
         LocManager locManager = new LocManager(home);
 
         //setting up other locs and things
-        LadlowHome ladlowHome = new LadlowHome("Ladlow home", "wake", AMOUNT.PLENTY);
-        Party party = new Party("Party", AMOUNT.ALOT);
+        LadlowHome ladlowHome = new LadlowHome("Ladlow home", "wake");
+        Party party = new Party("Party");
 
         //setting up items
         Furniture chairAtHome = new Furniture("chair", home);
         Jacket louisJacket = new Jacket("jacket", false, home);
         UObject sedative = new UObject("sedative", home);
-        Journal rachelsJournal = new Journal("journal", home);
+        UObject rachelsJournal = new UObject("journal", home);
         TV tvAtHome = new TV("tv", "little house on the prairie", home);
         Photo gadgesPhoto = new Photo("Gadges photo", "Gadge", home);
         Keys civicKeys = new Keys("keys", "Civic", home);
-        Beverage beer = new Beverage("beer", "pint", Boolean.TRUE, ladlowHome);
+        Beverage beer = new Beverage("beer", "pint", Amount.PLENTY, ladlowHome);
+        Beverage vodka = new Beverage("vodka", "bottle", Amount.ALOT, party);
         Shelve shelveAtHome = new Shelve("shelve", home);
+        shelveAtHome.addInventory(civicKeys);
         UObject potWithBurgers = new UObject("Pot with burgers", somewhere);
         UObject quitch = new UObject("quitch", somewhere);
         UObject canendHam = new UObject("canned ham", somewhere);
@@ -65,15 +67,12 @@ public class Main {
         ellie.addInventory(gadgesPhoto);
         holding.holding(ellie, gadgesPhoto);
         Person steveMasterton = new Person("Steve Masterton", somewhere);
-        steveMasterton.addInventory(potWithBurgers);
         Person msMasterton = new Person("Miss Masterton", somewhere);
         Person charlton = new Person("Charlton", somewhere);
         charlton.addInventory(quitch);
         Person mrDenniker = new Person("mrDenniker", somewhere);
-        mrDenniker.addInventory(canendHam);
         Person msDenniker = new Person("msDenniker", somewhere);
         Person mrGoldman = new Person("mrGoldman", somewhere);
-        mrGoldman.addInventory(coldMaC);
         Person msGoldman = new Person("msGoldman", somewhere);
         Person jude = new Person("Jude", somewhere);
         jude.addInventory(cheeze);
@@ -85,27 +84,30 @@ public class Main {
         //setting up the couples
         Couple mastertons = new Couple("Mastertons", steveMasterton, msMasterton);
         steveMasterton.setPartner(msMasterton);
+        mastertons.addInventory(potWithBurgers);
         Couple dennikers = new Couple("Dennikers", mrDenniker, msDenniker);
         mrDenniker.setPartner(msDenniker);
+        dennikers.addInventory(canendHam);
         Couple goldmans = new Couple("Goldmans", mrGoldman, msGoldman);
         mrGoldman.setPartner(msGoldman);
+        goldmans.addInventory(coldMaC);
 
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);
-        windBlow.windBlow(conditions, DIRECTION.WEST, STRENGTH.STRONG);
+        windBlow.windBlow(conditions, Direction.WEST, Strength.STRONG);
         putOn.putOn(louis, louisJacket);
         zip.zip(louis, louisJacket);
         findItem.findItem(louis, shelveAtHome, civicKeys);
-        ask.ask(rachel, louis, "Where are you going, Lewis?", INTEREST.CARELESS);
+        ask.ask(rachel, louis, "Where are you going, Lewis?", Interest.CARELESS);
         System.out.println("*Scene in the past*");
         crying.crying(rachel);
         give.give(louis, rachel, sedative);
         eatSedativePast.eatSedative(rachel);
         System.out.println("*now*");
-        if(rachel.getCondition() == CONDITION.CALM){
+        if(rachel.getCondition() == Condition.CALM){
             rachel.addInventory(rachelsJournal);
             sit.sit(rachel, chairAtHome);
-            flipPages.flipPages(rachel, rachelsJournal, INTEREST.CARELESS);
+            flipPages.flipPages(rachel, rachelsJournal, Interest.CARELESS);
         } else {
             System.out.println(rachel.getName() + " is "+ rachel.getCondition());
         }
@@ -131,14 +133,14 @@ public class Main {
         if (ladlowHome.equals(party)){
             System.out.println("they basically have a party at ladlows home");
         } else {
-            if (party.getAlcoholAmount().toInt() > ladlowHome.getAlcoholAmount().toInt()){
+            if (party.countAlcohol() > ladlowHome.countAlcohol()){
                 System.out.println(ladlowHome.getLocname() + " is almost similar to a " + party.getLocname() + ", but has less alcohol ");
             } else {
                 System.out.println(ladlowHome.getLocname() + " is almost similar to a " + party.getLocname() + ", but has same/even more alcohol");
             }
         }
 
-        drinkAlco.drinkAlco(louis, beer, AMOUNT.PLENTY);
+        drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
         thinkToDo.thinkToDo(louis, tellStories);
 
     }

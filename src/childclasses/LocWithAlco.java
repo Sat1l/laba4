@@ -1,25 +1,41 @@
 package childclasses;
 
-import enums.AMOUNT;
-import interfaces.hasAlcohol;
+import enums.Amount;
+import interfaces.HasAlcohol;
 import parentclasses.Location;
 
-public class LocWithAlco extends Location implements hasAlcohol {
+import java.util.LinkedList;
 
-    AMOUNT alcoholAmount;
+public class LocWithAlco extends Location implements HasAlcohol {
 
-    public LocWithAlco(String locname, AMOUNT alcoholAmount){
+    private LinkedList<Beverage> alcohol;
+
+    public LocWithAlco(String locname){
         super(locname);
-        this.alcoholAmount = alcoholAmount;
+        this.alcohol = new LinkedList<>();
     }
 
     @Override
-    public AMOUNT getAlcoholAmount() {
-        return alcoholAmount;
+    public LinkedList<Beverage> getAlcohol() {
+        return alcohol;
     }
 
     @Override
-    public void setAlcoholAmount(AMOUNT newAmount) {
-        this.alcoholAmount = newAmount;
+    public void addAlcohol(Beverage beverageToAdd) {
+        this.alcohol.add(beverageToAdd);
+    }
+
+    @Override
+    public void removeAlcohol(Beverage beverageToRemove) {
+        this.alcohol.remove(beverageToRemove);
+    }
+
+    @Override
+    public int countAlcohol() {
+        int res = 0;
+        for (Beverage beverage : alcohol){
+            res += beverage.getAmount().toInt();
+        }
+        return res;
     }
 }

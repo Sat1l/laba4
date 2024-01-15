@@ -9,6 +9,7 @@ public class UObject {
     public UObject(String name, Location location){
         this.name = name;
         this.location = location;
+        this.location.addObject(this);
     }
 
     public String getName(){
@@ -20,7 +21,9 @@ public class UObject {
     }
 
     public void setLocation(Location newLocation){
+        this.location.removeUObject(this);
         this.location = newLocation;
+        newLocation.addObject(this);
     }
 
 }

@@ -15,7 +15,7 @@ public class BringTogether extends Action {
     }
 
     public void bringTogether(Couple couple, UObject UObject, Location location){
-        if (couple.getHusband().getInventory().contains(UObject)){ //yes they bring thing as a couple but actually the man carries the thing
+        if (couple.getInventory().contains(UObject)){
             Person husband = couple.getHusband();
             Person wife = couple.getWife();
             husband.addDoing(this);

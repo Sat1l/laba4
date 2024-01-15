@@ -1,6 +1,6 @@
 package enums;
 
-public enum DIRECTION {
+public enum Direction {
 
     NORTH("north"),
 
@@ -14,7 +14,7 @@ public enum DIRECTION {
 
     private final String direction;
 
-    DIRECTION(String direction){
+    Direction(String direction){
         this.direction = direction;
     }
 

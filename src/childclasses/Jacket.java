@@ -1,18 +1,18 @@
 package childclasses;
 
-import enums.ZIPPERSTAT;
+import enums.ZipperStat;
 import parentclasses.Location;
 
 public class Jacket extends Clothing{
 
     private Boolean isZipped;
 
-    private ZIPPERSTAT zipperstat;
+    private ZipperStat zipperstat;
 
     public Jacket(String name, Boolean isZipped, Location location) {
         super(name, location);
         this.isZipped = isZipped;
-        this.zipperstat = ZIPPERSTAT.NORMAL;
+        this.zipperstat = ZipperStat.NORMAL;
     }
 
     public boolean getIsZipepd(){
@@ -23,11 +23,11 @@ public class Jacket extends Clothing{
         this.isZipped = zorunz;
     }
 
-    public ZIPPERSTAT getZipperstat(){
+    public ZipperStat getZipperstat(){
         return zipperstat;
     }
 
-    public void setZipperstat(ZIPPERSTAT zipperstat){
+    public void setZipperstat(ZipperStat zipperstat){
         this.zipperstat = zipperstat;
     }
 }

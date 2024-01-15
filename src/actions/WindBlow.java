@@ -1,7 +1,7 @@
 package actions;
 
-import enums.DIRECTION;
-import enums.STRENGTH;
+import enums.Direction;
+import enums.Strength;
 import parentclasses.Action;
 import parentclasses.Conditions;
 
@@ -11,7 +11,7 @@ public class WindBlow extends Action {
         super(actionName);
     }
 
-    public void windBlow(Conditions conditions, DIRECTION direction, STRENGTH strength){
+    public void windBlow(Conditions conditions, Direction direction, Strength strength){
         conditions.setWindDirection(direction);
         conditions.setWindStrength(strength);
         System.out.println("The " + strength.toString() + " window blew from " + direction);

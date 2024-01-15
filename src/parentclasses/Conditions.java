@@ -1,53 +1,53 @@
 package parentclasses;
 
-import enums.AMOUNT;
-import enums.DIRECTION;
-import enums.STRENGTH;
+import enums.Amount;
+import enums.Direction;
+import enums.Strength;
 
 public class Conditions {
 
-    private AMOUNT cloudsAmount;
+    private Amount cloudsAmount;
 
-    private STRENGTH windStrength;
+    private Strength windStrength;
 
-    private DIRECTION windDirection;
+    private Direction windDirection;
 
-    public Conditions(AMOUNT cloudsAmount, STRENGTH windStrength, DIRECTION windDirection){
+    public Conditions(Amount cloudsAmount, Strength windStrength, Direction windDirection){
         this.cloudsAmount = cloudsAmount;
         this.windStrength = windStrength;
         this.windDirection = windDirection;
     }
 
     public void newTuchi(){
-        if (this.cloudsAmount.toInt() + 1 > AMOUNT.ALOT.toInt()){
+        if (this.cloudsAmount.toInt() + 1 > Amount.ALOT.toInt()){
             System.out.println("налетели ещё тучи, но их так много, что новые даже не заметны");
         } else {
             System.out.println("налетели новые тучи");
-            this.setCloudsAmount(AMOUNT.fromInt(this.getCloudsAmount().toInt()+1));
+            this.setCloudsAmount(Amount.fromInt(this.getCloudsAmount().toInt()+1));
         }
     }
 
-    public AMOUNT getCloudsAmount() {
+    public Amount getCloudsAmount() {
         return cloudsAmount;
     }
 
-    public void setCloudsAmount(AMOUNT cloudsAmount) {
+    public void setCloudsAmount(Amount cloudsAmount) {
         this.cloudsAmount = cloudsAmount;
     }
 
-    public STRENGTH getWindStrength() {
+    public Strength getWindStrength() {
         return windStrength;
     }
 
-    public void setWindStrength(STRENGTH windStrength) {
+    public void setWindStrength(Strength windStrength) {
         this.windStrength = windStrength;
     }
 
-    public DIRECTION getWindDirection() {
+    public Direction getWindDirection() {
         return windDirection;
     }
 
-    public void setWindDirection(DIRECTION windDirection) {
+    public void setWindDirection(Direction windDirection) {
         this.windDirection = windDirection;
     }
 

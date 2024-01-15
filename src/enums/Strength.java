@@ -1,6 +1,6 @@
 package enums;
 
-public enum STRENGTH {
+public enum Strength {
 
     NONE("none"),
 
@@ -12,7 +12,7 @@ public enum STRENGTH {
 
     private final String strength;
 
-    STRENGTH(String strength){
+    Strength(String strength){
         this.strength = strength;
     }
 

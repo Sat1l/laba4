@@ -1,13 +1,13 @@
 package childclasses;
 
-import enums.AMOUNT;
-import interfaces.hasOccasion;
+import enums.Amount;
+import interfaces.HasOccasion;
 
-public class LadlowHome extends LocWithAlco  implements hasOccasion {
+public class LadlowHome extends LocWithAlco  implements HasOccasion {
     private final String occasion;
 
-    public LadlowHome(String locname, String occasion, AMOUNT alcoholAmount){
-        super(locname, alcoholAmount);
+    public LadlowHome(String locname, String occasion){
+        super(locname);
         this.occasion = occasion;
     }
 

@@ -1,6 +1,6 @@
 package enums;
 
-public enum INTEREST {
+public enum Interest {
 
     DEDICATED("interested"),
 
@@ -8,7 +8,7 @@ public enum INTEREST {
 
     private final String interest;
 
-    INTEREST(String interest){
+    Interest(String interest){
         this.interest = interest;
     }
 

@@ -1,6 +1,6 @@
 package enums;
 
-public enum CONDITION {
+public enum Condition {
 
     NORMAL("normal"),
 
@@ -12,7 +12,7 @@ public enum CONDITION {
 
     private final String condition;
 
-    CONDITION(String condition){
+    Condition(String condition){
         this.condition = condition;
     }
 

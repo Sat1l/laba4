@@ -1,20 +1,24 @@
 package actions;
 
+import childclasses.Furniture;
 import childclasses.Person;
 import interfaces.Sittable;
 import parentclasses.Action;
+import parentclasses.UObject;
 
 public class Sit extends Action {
 
-    Sittable sittingOn;
+    Furniture sittingOn;
 
     public Sit(String actionName) {
         super(actionName);
     }
 
-    public void sit(Person person, Sittable toSit){
+    public void sit(Person person, Furniture toSit){
         toSit.addSitting(person);
-        sittingOn = toSit;
+        if (person.getLocation() == toSit.getLocation()) {
+            sittingOn = toSit;
+        }
         person.addDoing(this);
     }
 

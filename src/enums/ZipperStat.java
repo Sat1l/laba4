@@ -1,6 +1,6 @@
 package enums;
 
-public enum ZIPPERSTAT {
+public enum ZipperStat {
 
     NORMAL("normal"),
 
@@ -10,7 +10,7 @@ public enum ZIPPERSTAT {
 
     private final String zipperStat;
 
-    ZIPPERSTAT(String zipperStat){
+    ZipperStat(String zipperStat){
         this.zipperStat = zipperStat;
     }
 

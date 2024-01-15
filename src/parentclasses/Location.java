@@ -26,10 +26,8 @@ public class Location {
         this.UObjects.add(UObject);
     }
 
-
-    @Override
-    public String toString(){
-        return locname;
+    public void removeUObject(UObject UObject) {
+        this.UObjects.remove(UObject);
     }
 
     @Override

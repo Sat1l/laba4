@@ -1,6 +1,6 @@
 package parentclasses;
 
-import enums.CONDITION;
+import enums.Condition;
 
 import java.util.LinkedList;
 
@@ -8,7 +8,7 @@ public abstract class Alive {
 
     private final String name;
 
-    private CONDITION condition = CONDITION.NORMAL;
+    private Condition condition = Condition.NORMAL;
 
     private final LinkedList<Action> doing;
 
@@ -24,11 +24,11 @@ public abstract class Alive {
         return name;
     }
 
-    public CONDITION getCondition() {
+    public Condition getCondition() {
         return condition;
     }
 
-    public void setCondition(CONDITION newCondition) {
+    public void setCondition(Condition newCondition) {
         this.condition = newCondition;
     }
 

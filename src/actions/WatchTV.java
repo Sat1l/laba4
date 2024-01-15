@@ -13,7 +13,9 @@ public class WatchTV extends Action {
     }
 
     public void watchTV(Person viewer, TV tv) {
-        viewer.addDoing(this);
+        if (viewer.getLocation() == tv.getLocation()) {
+            viewer.addDoing(this);
+        }
         watchedTV = tv;
     }
 

@@ -1,7 +1,7 @@
 package actions;
 
 import childclasses.Person;
-import enums.CONDITION;
+import enums.Condition;
 import parentclasses.Action;
 import parentclasses.UObject;
 
@@ -21,10 +21,10 @@ public class EatSedative extends Action {
             float f = random.nextFloat();
             person.removeInventory(res);
             if (f > 0.1f){
-                person.setCondition(CONDITION.CALM);
+                person.setCondition(Condition.CALM);
                 System.out.println(person.getName() + " is now calm");
             } else {
-                person.setCondition(CONDITION.BUYANIT);
+                person.setCondition(Condition.BUYANIT);
                 System.out.println(person.getName() + " is now buyanit");
             }
             person.removeDoing(this);

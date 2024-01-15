@@ -30,4 +30,9 @@ public class Furniture extends UObject implements Sittable {
     public void removeSitting(Alive toRemove) {
         this.sitting.remove(toRemove);
     }
+
+    @Override
+    public String toString() {
+        return super.name;
+    }
 }

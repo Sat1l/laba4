@@ -1,6 +1,6 @@
 package enums;
 
-public enum AMOUNT {
+public enum Amount {
 
     NONE("none", 0),
 
@@ -14,7 +14,7 @@ public enum AMOUNT {
 
     private final int intAmount;
 
-    AMOUNT(String strAmount, int intAmount){
+    Amount(String strAmount, int intAmount){
         this.strAmount = strAmount;
         this.intAmount = intAmount;
     }
@@ -28,8 +28,8 @@ public enum AMOUNT {
         return intAmount;
     }
 
-    public static AMOUNT fromInt(int value){
-        for(AMOUNT amount : AMOUNT.values()){
+    public static Amount fromInt(int value){
+        for(Amount amount : Amount.values()){
             if (amount.intAmount == value){
                 return amount;
             }

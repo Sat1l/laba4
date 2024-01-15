@@ -3,6 +3,7 @@ package parentclasses;
 public class Action {
 
     final String actionName;
+
     public Action(String actionName){
         this.actionName = actionName;
     }
@@ -15,4 +16,5 @@ public class Action {
     public String getActionName(){
         return actionName;
     }
+
 }
