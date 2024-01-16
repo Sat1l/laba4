@@ -21,6 +21,7 @@ public class ThinkToDo extends Action {
             if (f > 0.5f){
                 System.out.println(person.getName() + " decided to " + action.toString());
                 person.removeDoing(action);
+                person.addDoing(action);
                 return;
             } else {
                 count++;
@@ -31,7 +32,5 @@ public class ThinkToDo extends Action {
                 }
             }
         }
-
     }
-
 }
