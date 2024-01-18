@@ -1,4 +1,6 @@
-# laba3
+# laba4
+
+basicaly it's a fork of [laba3](https://github.com/Sat1l/laba3), but since github manages it in such a wacky way it looks like it is a whole other repo
 
 ### Structure
 - the root folder acts as a folder for the IntelliJ IDEA project.
