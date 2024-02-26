@@ -1,7 +1,6 @@
 package childclasses;
 
 import enums.Amount;
-import interfaces.HasPrice;
 import parentclasses.Location;
 import parentclasses.UObject;
 

@@ -7,8 +7,6 @@ import parentclasses.Couple;
 import parentclasses.Location;
 import parentclasses.UObject;
 
-import java.util.Random;
-
 public class BringTogether extends Action {
 
     public BringTogether(String actionName) {
@@ -23,7 +21,7 @@ public class BringTogether extends Action {
             wife.addDoing(this);
             husband.removeInventory(uObject);
             husband.removeDoing(this);
-            location.addObject(uObject);
+            location.addInventory(uObject);
             husband.setLocation(location);
             wife.setLocation(location);
             System.out.println(couple.getName() + " brought " + uObject.getName() + " to " + location.getLocname());

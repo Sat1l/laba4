@@ -1,8 +1,6 @@
 package actions;
 
 import childclasses.Person;
-import childclasses.TV;
-import exceptions.LocationMissmatchException;
 import interfaces.HasName;
 import parentclasses.Action;
 

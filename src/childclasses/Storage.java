@@ -30,14 +30,4 @@ public class Storage extends UObject implements HasInventory {
         this.inventory.remove(toRemove);
     }
 
-    @Override
-    public int getAmountOfInInventory(Class<?> objectType) {
-        int counter = 0;
-        for (UObject item:inventory){
-            if (objectType.isInstance(objectType)){
-                counter += 1;
-            }
-        }
-        return counter;
-    }
 }

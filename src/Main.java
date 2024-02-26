@@ -2,6 +2,7 @@ import childclasses.*;
 import enums.*;
 import exceptions.IllegalAmountException;
 import exceptions.ItemNotInPlaceException;
+import exceptions.LocationMissmatchException;
 import parentclasses.*;
 import actions.*;
 
@@ -16,7 +17,8 @@ public class Main {
         //setting up other locs and things
         LadlowHome ladlowHome = new LadlowHome("Ladlow home", "wake");
         Party party = new Party("Party");
-        LocWithAlco orringtonShop = new LocWithAlco("shop in Orrington");
+        Shop orringtonShop = new Shop("shop in Orrington");
+        Location napoli = new Location("napoli");
 
         //setting up items
         Furniture chairAtHome = new Furniture("chair", home);
@@ -31,18 +33,32 @@ public class Main {
         Storage shelveAtHome = new Storage("shelve", home);
         shelveAtHome.addInventory(civicKeys);
         UObject burgers = new UObject("burgers", somewhere);
-        UObject quitch = new UObject("quitch", somewhere);
-        UObject canendHam = new UObject("canned ham", somewhere);
-        UObject coldMaC = new UObject("cold meat and cheeze", somewhere);
-        UObject cheeze = new UObject("wheel of Mister Retha", somewhere);
-        UObject pie = new UObject("sweet pie", somewhere);
-        UObject apples = new UObject("apples", somewhere);
-        Storage silverPlate = new Storage("silver plate", somewhere);
         Storage pot = new Storage("pot", somewhere);
-        Storage bag = new Storage("bag", somewhere);
-        Storage table = new Storage("table", ladlowHome);
         pot.addInventory(burgers);
+        UObject quitch = new UObject("quitch", somewhere);
+        Storage container = new Storage("container", somewhere);
+        container.addInventory(quitch);
+        UObject canendHam = new UObject("canned ham", somewhere);
+        Storage plasticBag = new Storage("bag", somewhere);
+        plasticBag.addInventory(canendHam);
+        UObject coldMaC = new UObject("cold meat and cheeze", somewhere);
+        Storage napkins = new Storage("napkins", somewhere);
+        napkins.addInventory(coldMaC);
+        UObject cheeze = new UObject("wheel of Mister Retha", somewhere);
+        Storage packet = new Storage("packer", somewhere);
+        packet.addInventory(cheeze);
+        UObject pie = new UObject("sweet pie", somewhere);
+        Storage box = new Storage("box", somewhere);
+        box.addInventory(pie);
+        UObject apples = new UObject("apples", somewhere);
+        Storage bag = new Storage("bag", somewhere);
         bag.addInventory(apples);
+        Storage silverPlate = new Storage("silver plate", somewhere);
+        Storage table = new Storage("table", ladlowHome);
+
+
+        Beverage packOfBeer1 = new Beverage("Beer", "Pack",Amount.ALOT, orringtonShop);
+        Beverage packOfBeer2 = new Beverage("Beer", "Pack",Amount.ALOT, orringtonShop);
 
         //setting up the actions
         Ask ask = new Ask("asking");
@@ -73,6 +89,8 @@ public class Main {
         Action acceptConds = new Action("accepting condolences");
         Action nodAndThank = new Action("nods and thanks");
         Action diggingUpGraves = new Action("digging up graves");
+        Buy buy = new Buy("buying");
+        Call call = new Call("calling");
 
         //setting up the characters
         Person louis = new Person("Louis", home);
@@ -81,21 +99,26 @@ public class Main {
         Person ellie = new Person("Ellie", home);
         watchTV.watchAt(ellie, tvAtHome);
         ellie.addInventory(gadgesPhoto);
-        holding.holding(ellie, gadgesPhoto);
+        try {
+            holding.holding(ellie, gadgesPhoto);
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
         Person steveMasterton = new Person("Steve Masterton", somewhere);
         Person msMasterton = new Person("Miss Masterton", somewhere);
         Person charlton = new Person("Charlton", somewhere);
-        charlton.addInventory(quitch);
+        charlton.addInventory(container);
         Person mrDenniker = new Person("mrDenniker", somewhere);
         Person msDenniker = new Person("msDenniker", somewhere);
         Person irvinGoldman = new Person("Irvin Goldman", somewhere);
         Person doryGoldman = new Person("Dory Goldman", somewhere);
         Person jude = new Person("Jude", somewhere);
-        jude.addInventory(cheeze);
+        jude.addInventory(packet);
         Person missDanbridge = new Person("Miss Danbridge", somewhere);
-        missDanbridge.addInventory(pie);
+        missDanbridge.addInventory(box);
         Person hardu = new Person("Surendra Hardu", somewhere);
         hardu.addInventory(bag);
+        Person napoliDispetcher = new Person("dispetcher at Napoli", napoli);
 
 
         //setting up the couples
@@ -104,26 +127,42 @@ public class Main {
         mastertons.addInventory(pot);
         Couple dennikers = new Couple("Dennikers", mrDenniker, msDenniker);
         mrDenniker.setPartner(msDenniker);
-        dennikers.addInventory(canendHam);
+        dennikers.addInventory(plasticBag);
         Couple goldmans = new Couple("Goldmans", irvinGoldman, doryGoldman);
         irvinGoldman.setPartner(doryGoldman);
-        goldmans.addInventory(coldMaC);
+        goldmans.addInventory(napkins);
 
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);
         windBlow.windBlow(conditions, Direction.WEST, Strength.STRONG);
         putOn.putOn(louis, louisJacket);
-        zip.zip(louis, louisJacket);
-        findItem.findItem(louis, shelveAtHome, civicKeys);
+        try {
+            zip.zip(louis, louisJacket);
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            findItem.findItem(louis, shelveAtHome, civicKeys);
+        } catch (ItemNotInPlaceException | LocationMissmatchException e) {
+            throw new RuntimeException(e);
+        }
         ask.ask(rachel, louis, "Where are you going, Lewis?", Interest.CARELESS);
         System.out.println("*Scene in the past*");
         crying.crying(rachel);
-        give.give(louis, rachel, sedative);
+        try {
+            give.give(louis, rachel, sedative);
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
         eatSedativePast.eatSedative(rachel);
         System.out.println("*now*");
         if(rachel.getCondition() == Condition.CALM){
             rachel.addInventory(rachelsJournal);
-            sit.sit(rachel, chairAtHome);
+            try {
+                sit.sit(rachel, chairAtHome);
+            } catch (LocationMissmatchException e) {
+                throw new RuntimeException(e);
+            }
             flipPages.flipPages(rachel, rachelsJournal, Interest.CARELESS);
         } else {
             System.out.println(rachel.getName() + " is "+ rachel.getCondition());
@@ -141,21 +180,53 @@ public class Main {
         silverPlate.setLocation(ladlowHome);
         try {
             if(bringTogether.bringTogether(mastertons, pot, ladlowHome)){
-                transferItems.TransferItems(steveMasterton, pot, burgers, table);
+                transferItems.transferItems(steveMasterton, pot, burgers, table);
             }
         } catch (ItemNotInPlaceException e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
         try {
             if(bring.bring(charlton, quitch, ladlowHome)){
-                transferItems.TransferItems(charlton,);
+                transferItems.transferItems(charlton, container, quitch, table);
             }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
         }
-        bringTogether.bringTogether(dennikers, canendHam, ladlowHome);
-        bringTogether.bringTogether(goldmans, coldMaC, ladlowHome);
-        bring.bring(jude, cheeze, ladlowHome);
-        bring.bring(missDanbridge, pie, ladlowHome);
-        bring.bring(hardu, apples, ladlowHome);
+        try {
+            if(bringTogether.bringTogether(dennikers, plasticBag, ladlowHome)){
+                 transferItems.transferItems(dennikers.getHusband(), plasticBag, canendHam, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(bringTogether.bringTogether(goldmans, napkins, ladlowHome)){
+                transferItems.transferItems(goldmans.getHusband(), napkins, coldMaC, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(bring.bring(jude, packet, ladlowHome)){
+                transferItems.transferItems(jude, packet, cheeze, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(bring.bring(missDanbridge, box, ladlowHome)){
+                transferItems.transferItems(missDanbridge, napkins, coldMaC, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(bring.bring(hardu, bag, ladlowHome)){
+                transferItems.transferItems(hardu, bag, apples, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            throw new RuntimeException(e);
+        }
 
 
         if (ladlowHome.equals(party)){
@@ -168,21 +239,36 @@ public class Main {
             }
         }
 
-        drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
+        try {
+            drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
+        } catch (LocationMissmatchException e) {
+            throw new RuntimeException(e);
+        }
         thinkAbout.thinkAbout(louis, tellStories);
 
         rachel.addDoing(crying);
         calmSb.calmSb(doryGoldman, rachel);
         watchSb.watchAt(irvinGoldman, louis);
 
-        transferItems.TransferItems(ellie, table, burgers, silverPlate);
+        transferItems.transferItems(ellie, table, burgers, silverPlate);
         ellie.addDoing(walk);
 
         louis.addDoing(acceptConds);
         louis.addDoing(nodAndThank);
         thinkAbout.thinkAbout(louis, diggingUpGraves);
+        louis.removeDoing(thinkAbout);
 
+        louis.setLocation(orringtonShop);
+        buy.buy(louis, packOfBeer1, orringtonShop);
+        buy.buy(louis, packOfBeer2, orringtonShop);
 
+        call.call(louis, napoliDispetcher);
+        say.say(napoliDispetcher, "can i get ur name sir\n");
+        thinkAbout.thinkAbout(louis, "Oz great and scary");
+        louis.removeDoing(thinkAbout);
+        say.say(louis,"lu kreed\n");
+        say.say(napoliDispetcher, "we're busy well do this in 45mins, thats ok?\n");
+        say.say(louis, "yep thats good");
 
     }
 }

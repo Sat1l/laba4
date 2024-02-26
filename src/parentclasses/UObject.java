@@ -12,7 +12,7 @@ public class UObject implements HasLocation, HasName {
     public UObject(String name, Location location){
         this.name = name;
         this.location = location;
-        this.location.addObject(this);
+        this.location.addInventory(this);
     }
 
     public String getName(){
@@ -26,9 +26,9 @@ public class UObject implements HasLocation, HasName {
 
     @Override
     public void setLocation(Location newLocation){
-        this.location.removeUObject(this);
+        this.location.removeInventory(this);
         this.location = newLocation;
-        newLocation.addObject(this);
+        newLocation.addInventory(this);
     }
 
 }

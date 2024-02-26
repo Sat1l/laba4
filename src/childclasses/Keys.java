@@ -11,8 +11,5 @@ public class Keys extends UObject {
         this.whatFor = whatFor;
     }
 
-    public String getWhatFor() {
-        return this.whatFor;
-    }
 
 }
