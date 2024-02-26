@@ -8,6 +8,8 @@ public enum Condition {
 
     CALM("calm"),
 
+    SAD("sad"),
+
     BUYANIT("buyanit");
 
     private final String condition;

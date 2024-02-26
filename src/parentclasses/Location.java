@@ -1,9 +1,11 @@
 package parentclasses;
 
+import interfaces.HasInventory;
+
 import java.util.LinkedList;
 import java.util.Objects;
 
-public class Location {
+public class Location implements HasInventory {
 
     protected String locname;
 
@@ -18,16 +20,19 @@ public class Location {
         return locname;
     }
 
-    public LinkedList<UObject> getObjects(){
+    public LinkedList<UObject> getInventory(){
         return UObjects;
     }
 
-    public void addObject(UObject UObject){
-        this.UObjects.add(UObject);
+    @Override
+    public void addInventory(UObject toAdd) {
+        this.UObjects.add(toAdd);
+        toAdd.setLocation(this);
     }
 
-    public void removeUObject(UObject UObject) {
-        this.UObjects.remove(UObject);
+    @Override
+    public void removeInventory(UObject toRemove) {
+        this.UObjects.remove(toRemove);
     }
 
     @Override

@@ -1,6 +1,9 @@
 package parentclasses;
 
-public class UObject {
+import interfaces.HasLocation;
+import interfaces.HasName;
+
+public class UObject implements HasLocation, HasName {
 
     protected final String name;
 
@@ -20,6 +23,8 @@ public class UObject {
         return location;
     }
 
+
+    @Override
     public void setLocation(Location newLocation){
         this.location.removeUObject(this);
         this.location = newLocation;

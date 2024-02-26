@@ -1,10 +1,13 @@
 package parentclasses;
 
 import enums.Condition;
+import interfaces.HasInventory;
+import interfaces.HasLocation;
+import interfaces.HasName;
 
 import java.util.LinkedList;
 
-public abstract class Alive {
+public abstract class Alive implements HasLocation, HasInventory, HasName {
 
     private final String name;
 

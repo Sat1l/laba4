@@ -1,6 +1,7 @@
 package actions;
 
 import childclasses.Person;
+import exceptions.ItemNotInPlaceException;
 import parentclasses.Action;
 import parentclasses.UObject;
 
@@ -12,12 +13,12 @@ public class Holding extends Action {
         super(actionName);
     }
 
-    public void holding(Person person, UObject UObject){
+    public void holding(Person person, UObject UObject) throws ItemNotInPlaceException{
         if(person.getInventory().contains(UObject)){
             person.addDoing(this);
             heldUObject = UObject;
         } else {
-            System.out.println("nothing to hold!");
+            throw new ItemNotInPlaceException(person, UObject);
         }
     }
 

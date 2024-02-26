@@ -4,7 +4,6 @@ import childclasses.Person;
 import interfaces.HasInventory;
 
 import java.util.LinkedList;
-import java.util.Objects;
 
 public class Couple implements HasInventory {
 

@@ -8,13 +8,16 @@ import parentclasses.Location;
 
 import java.util.LinkedList;
 
-public class Person extends Alive implements CanWear, HasInventory {
+public class Person extends Alive implements CanWear, HasInventory{
 
     private final LinkedList<Clothing> wears;
 
     private final LinkedList<UObject> inventory;
 
     private Person partner;
+
+    private int money;
+
     public Person(String name, Location location) {
         super(name, location);
         this.wears = new LinkedList<>();

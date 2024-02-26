@@ -3,6 +3,7 @@ package actions;
 import childclasses.Jacket;
 import childclasses.Person;
 import enums.ZipperStat;
+import exceptions.ItemNotInPlaceException;
 import parentclasses.Action;
 
 import java.util.Random;
@@ -13,7 +14,7 @@ public class Zip extends Action {
         super(actionName);
     }
 
-    public void zip(Person person, Jacket jacket) {
+    public void zip(Person person, Jacket jacket) throws ItemNotInPlaceException{
         if (person.getWears().contains(jacket)) {
             Random random = new Random();
             person.addDoing(this);
@@ -33,7 +34,7 @@ public class Zip extends Action {
                 System.out.println(person.getName() + " tried to zip " + jacket.getName() + " but it was either already zipped or stuck");
             }
         } else {
-            System.out.println("oopsie no jacket");
+            throw new ItemNotInPlaceException(person, jacket);
         }
     }
 }

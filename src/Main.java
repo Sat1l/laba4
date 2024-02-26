@@ -1,10 +1,12 @@
 import childclasses.*;
 import enums.*;
+import exceptions.IllegalAmountException;
+import exceptions.ItemNotInPlaceException;
 import parentclasses.*;
 import actions.*;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws IllegalAmountException {
 
         Conditions conditions = new Conditions(Amount.NONE, Strength.WEAK, Direction.WEST);
         Location home = new Location("home");
@@ -14,6 +16,7 @@ public class Main {
         //setting up other locs and things
         LadlowHome ladlowHome = new LadlowHome("Ladlow home", "wake");
         Party party = new Party("Party");
+        LocWithAlco orringtonShop = new LocWithAlco("shop in Orrington");
 
         //setting up items
         Furniture chairAtHome = new Furniture("chair", home);
@@ -25,15 +28,21 @@ public class Main {
         Keys civicKeys = new Keys("keys", "Civic", home);
         Beverage beer = new Beverage("beer", "pint", Amount.PLENTY, ladlowHome);
         Beverage vodka = new Beverage("vodka", "bottle", Amount.ALOT, party);
-        Shelve shelveAtHome = new Shelve("shelve", home);
+        Storage shelveAtHome = new Storage("shelve", home);
         shelveAtHome.addInventory(civicKeys);
-        UObject potWithBurgers = new UObject("Pot with burgers", somewhere);
+        UObject burgers = new UObject("burgers", somewhere);
         UObject quitch = new UObject("quitch", somewhere);
         UObject canendHam = new UObject("canned ham", somewhere);
         UObject coldMaC = new UObject("cold meat and cheeze", somewhere);
         UObject cheeze = new UObject("wheel of Mister Retha", somewhere);
         UObject pie = new UObject("sweet pie", somewhere);
-        UObject apples = new UObject("bag of apples", somewhere);
+        UObject apples = new UObject("apples", somewhere);
+        Storage silverPlate = new Storage("silver plate", somewhere);
+        Storage pot = new Storage("pot", somewhere);
+        Storage bag = new Storage("bag", somewhere);
+        Storage table = new Storage("table", ladlowHome);
+        pot.addInventory(burgers);
+        bag.addInventory(apples);
 
         //setting up the actions
         Ask ask = new Ask("asking");
@@ -51,19 +60,26 @@ public class Main {
         Receive receive = new Receive("receiving");
         Say say = new Say("saying");
         Sit sit = new Sit("sitting on a");
-        ThinkToDo thinkToDo = new ThinkToDo("thinking to do");
+        ThinkAbout thinkAbout = new ThinkAbout("thinking about");
         Unzip unzip = new Unzip("unzipping");
-        WatchTV watchTV = new WatchTV("watching");
+        WatchAt watchTV = new WatchAt("watching tv");
         WindBlow windBlow = new WindBlow("blowing wind");
         Zip zip = new Zip("zipping");
         Action tellStories = new Action("tell uncle Carls stories");
+        CalmSb calmSb = new CalmSb("calming somebody");
+        TransferItems transferItems = new TransferItems("transfering items");
+        Action walk = new Action("walk");
+        WatchAt watchSb = new WatchAt("watching at");
+        Action acceptConds = new Action("accepting condolences");
+        Action nodAndThank = new Action("nods and thanks");
+        Action diggingUpGraves = new Action("digging up graves");
 
         //setting up the characters
         Person louis = new Person("Louis", home);
         louis.addInventory(sedative);
         Person rachel = new Person("Rachel", home);
         Person ellie = new Person("Ellie", home);
-        watchTV.watchTV(ellie, tvAtHome);
+        watchTV.watchAt(ellie, tvAtHome);
         ellie.addInventory(gadgesPhoto);
         holding.holding(ellie, gadgesPhoto);
         Person steveMasterton = new Person("Steve Masterton", somewhere);
@@ -72,24 +88,25 @@ public class Main {
         charlton.addInventory(quitch);
         Person mrDenniker = new Person("mrDenniker", somewhere);
         Person msDenniker = new Person("msDenniker", somewhere);
-        Person mrGoldman = new Person("mrGoldman", somewhere);
-        Person msGoldman = new Person("msGoldman", somewhere);
+        Person irvinGoldman = new Person("Irvin Goldman", somewhere);
+        Person doryGoldman = new Person("Dory Goldman", somewhere);
         Person jude = new Person("Jude", somewhere);
         jude.addInventory(cheeze);
         Person missDanbridge = new Person("Miss Danbridge", somewhere);
         missDanbridge.addInventory(pie);
         Person hardu = new Person("Surendra Hardu", somewhere);
-        hardu.addInventory(apples);
+        hardu.addInventory(bag);
+
 
         //setting up the couples
         Couple mastertons = new Couple("Mastertons", steveMasterton, msMasterton);
         steveMasterton.setPartner(msMasterton);
-        mastertons.addInventory(potWithBurgers);
+        mastertons.addInventory(pot);
         Couple dennikers = new Couple("Dennikers", mrDenniker, msDenniker);
         mrDenniker.setPartner(msDenniker);
         dennikers.addInventory(canendHam);
-        Couple goldmans = new Couple("Goldmans", mrGoldman, msGoldman);
-        mrGoldman.setPartner(msGoldman);
+        Couple goldmans = new Couple("Goldmans", irvinGoldman, doryGoldman);
+        irvinGoldman.setPartner(doryGoldman);
         goldmans.addInventory(coldMaC);
 
         locManager.setStoryLocation(home);
@@ -113,7 +130,7 @@ public class Main {
         }
         System.out.println(rachel.getDoingString());
         System.out.println(ellie.getDoingString());
-        say.say(louis, "I'll go buy some pizza \n");
+        say.say(louis, "I'll go Buy some pizza \n");
         say.say(rachel, "Haven't you eat earlier today? \n");
         say.say(louis, "I didn't want to eat then \n");
 
@@ -121,8 +138,19 @@ public class Main {
         System.out.println(ladlowHome.getLocname() + " " +  ladlowHome.getOccasion());
         louis.setLocation(ladlowHome);
         rachel.setLocation(ladlowHome);
-        bringTogether.bringTogether(mastertons, potWithBurgers, ladlowHome);
-        bring.bring(charlton, quitch, ladlowHome);
+        silverPlate.setLocation(ladlowHome);
+        try {
+            if(bringTogether.bringTogether(mastertons, pot, ladlowHome)){
+                transferItems.TransferItems(steveMasterton, pot, burgers, table);
+            }
+        } catch (ItemNotInPlaceException e) {
+            System.out.println(e);
+        }
+        try {
+            if(bring.bring(charlton, quitch, ladlowHome)){
+                transferItems.TransferItems(charlton,);
+            }
+        }
         bringTogether.bringTogether(dennikers, canendHam, ladlowHome);
         bringTogether.bringTogether(goldmans, coldMaC, ladlowHome);
         bring.bring(jude, cheeze, ladlowHome);
@@ -141,7 +169,20 @@ public class Main {
         }
 
         drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
-        thinkToDo.thinkToDo(louis, tellStories);
+        thinkAbout.thinkAbout(louis, tellStories);
+
+        rachel.addDoing(crying);
+        calmSb.calmSb(doryGoldman, rachel);
+        watchSb.watchAt(irvinGoldman, louis);
+
+        transferItems.TransferItems(ellie, table, burgers, silverPlate);
+        ellie.addDoing(walk);
+
+        louis.addDoing(acceptConds);
+        louis.addDoing(nodAndThank);
+        thinkAbout.thinkAbout(louis, diggingUpGraves);
+
+
 
     }
 }

@@ -1,6 +1,7 @@
 package childclasses;
 
 import enums.Amount;
+import interfaces.HasPrice;
 import parentclasses.Location;
 import parentclasses.UObject;
 
@@ -31,4 +32,5 @@ public class Beverage extends UObject {
     public void setAmount(Amount amount) {
         this.amount = amount;
     }
+
 }

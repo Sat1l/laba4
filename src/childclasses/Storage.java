@@ -6,11 +6,11 @@ import parentclasses.UObject;
 
 import java.util.LinkedList;
 
-public class Shelve extends UObject implements HasInventory {
+public class Storage extends UObject implements HasInventory {
 
     private final LinkedList<UObject> inventory;
 
-    public Shelve(String name, Location location){
+    public Storage(String name, Location location){
         super(name, location);
         this.inventory = new LinkedList<>();
     }
@@ -28,5 +28,16 @@ public class Shelve extends UObject implements HasInventory {
     @Override
     public void removeInventory(UObject toRemove) {
         this.inventory.remove(toRemove);
+    }
+
+    @Override
+    public int getAmountOfInInventory(Class<?> objectType) {
+        int counter = 0;
+        for (UObject item:inventory){
+            if (objectType.isInstance(objectType)){
+                counter += 1;
+            }
+        }
+        return counter;
     }
 }

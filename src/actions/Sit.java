@@ -2,6 +2,7 @@ package actions;
 
 import childclasses.Furniture;
 import childclasses.Person;
+import exceptions.LocationMissmatchException;
 import parentclasses.Action;
 
 public class Sit extends Action {
@@ -12,10 +13,12 @@ public class Sit extends Action {
         super(actionName);
     }
 
-    public void sit(Person person, Furniture toSit){
+    public void sit(Person person, Furniture toSit) throws LocationMissmatchException{
         toSit.addSitting(person);
         if (person.getLocation() == toSit.getLocation()) {
             sittingOn = toSit;
+        } else {
+            throw new LocationMissmatchException(person, toSit);
         }
         person.addDoing(this);
     }

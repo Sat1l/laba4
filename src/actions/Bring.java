@@ -1,6 +1,7 @@
 package actions;
 
 import childclasses.Person;
+import exceptions.ItemNotInPlaceException;
 import parentclasses.Action;
 import parentclasses.Location;
 import parentclasses.UObject;
@@ -13,25 +14,17 @@ public class Bring extends Action {
         super(actionName);
     }
 
-    public void bring(Person person, UObject UObject, Location location){
-        if (person.getInventory().contains(UObject)){
+    public Boolean bring(Person person, UObject uObject, Location location) throws ItemNotInPlaceException{
+        if (person.getInventory().contains(uObject)){
             person.addDoing(this);
-            Random random = new Random();
-            float f = random.nextFloat();
-            if (f > 0.1f){
-                person.removeInventory(UObject);
-                person.removeDoing(this);
-                location.addObject(UObject);
-                person.setLocation(location);
-                System.out.println(person.getName() + " brought " + UObject.getName() + " to " + location.getLocname());
-            } else {
-                person.removeInventory(UObject);
-                person.removeDoing(this);
-                person.setLocation(location);
-                System.out.println(person.getName() + " lost " + UObject.getName() + " on its way to the " + location.getLocname());
-            }
+            person.removeInventory(uObject);
+            person.removeDoing(this);
+            location.addObject(uObject);
+            person.setLocation(location);
+            System.out.println(person.getName() + " brought " + uObject.getName() + " to " + location.getLocname());
+            return Boolean.TRUE;
         } else {
-            System.out.println(person.getName() + " does not have this thing to bring it");
+            throw new ItemNotInPlaceException(person, uObject);
         }
     }
 }
