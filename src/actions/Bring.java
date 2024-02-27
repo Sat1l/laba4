@@ -12,7 +12,7 @@ public class Bring extends Action {
         super(actionName);
     }
 
-    public Boolean bring(Person person, UObject uObject, Location location) throws ItemNotInPlaceException{
+    public void bring(Person person, UObject uObject, Location location) throws ItemNotInPlaceException{
         if (person.getInventory().contains(uObject)){
             person.addDoing(this);
             person.removeInventory(uObject);
@@ -20,7 +20,6 @@ public class Bring extends Action {
             location.addInventory(uObject);
             person.setLocation(location);
             System.out.println(person.getName() + " brought " + uObject.getName() + " to " + location.getLocname());
-            return Boolean.TRUE;
         } else {
             throw new ItemNotInPlaceException(person, uObject);
         }

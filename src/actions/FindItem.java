@@ -25,8 +25,8 @@ public class FindItem extends Action {
         float f;
         while (true) {
             f = random.nextFloat();
-            if (f < 0.8f && (count < 3)) {
-                if (somethingWithInventory.getInventory().contains(UObjectToFind) && (count < 3)) {
+            if (f < 0.8f) {
+                if (somethingWithInventory.getInventory().contains(UObjectToFind) && (count > 3)) {
                     somethingWithInventory.removeInventory(UObjectToFind);
                     person.addInventory(UObjectToFind);
                     System.out.println(person.getName() + " found " + UObjectToFind.getName() + " on/in a " + somethingWithInventory.getName());

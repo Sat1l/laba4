@@ -32,7 +32,7 @@ public class CalmSb extends Action{
             toCalm.setCondition(Condition.CALM);
             calmer.removeDoing(this);
         } catch (LocationMissmatchException e) {
-            System.out.println(e);
+            throw new RuntimeException(e);
         }
     }
 }

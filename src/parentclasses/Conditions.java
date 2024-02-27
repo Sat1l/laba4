@@ -34,9 +34,9 @@ public class Conditions {
         this.windStrength = windStrength;
     }
 
-    public Direction getWindDirection() {
-        return windDirection;
-    }
+    //public Direction getWindDirection() {
+    //    return windDirection;
+    //}
 
     public void setWindDirection(Direction windDirection) {
         this.windDirection = windDirection;

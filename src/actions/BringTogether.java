@@ -13,7 +13,7 @@ public class BringTogether extends Action {
         super(actionName);
     }
 
-    public Boolean bringTogether(Couple couple, UObject uObject, Location location) throws ItemNotInPlaceException{
+    public void bringTogether(Couple couple, UObject uObject, Location location) throws ItemNotInPlaceException{
         if (couple.getInventory().contains(uObject)){
             Person husband = couple.getHusband();
             Person wife = couple.getWife();
@@ -25,7 +25,6 @@ public class BringTogether extends Action {
             husband.setLocation(location);
             wife.setLocation(location);
             System.out.println(couple.getName() + " brought " + uObject.getName() + " to " + location.getLocname());
-            return Boolean.TRUE;
         } else {
             throw new ItemNotInPlaceException(couple, uObject);
         }

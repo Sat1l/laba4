@@ -12,13 +12,13 @@ public class TV extends UObject {
         this.shows = shows;
     }
 
-    public String getShows(){
-        return this.shows;
-    }
+    //public String getShows(){
+    //    return this.shows;
+    //}
 
-    public void setShows(String toShow){
-        this.shows = toShow;
-        System.out.println("Now the tv is showing " + toShow);
-    }
+    //public void setShows(String toShow){
+    //    this.shows = toShow;
+    //    System.out.println("Now the tv is showing " + toShow);
+    //}
 
 }

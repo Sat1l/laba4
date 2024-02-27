@@ -2,15 +2,15 @@ package enums;
 
 public enum Direction {
 
-    NORTH("north"),
+    //NORTH("north"),
 
     EAST("east"),
 
-    SOUTH("south"),
+    //SOUTH("south"),
 
-    WEST("west"),
+    //NONE("none"),
 
-    NONE("none");
+    WEST("west");
 
     private final String direction;
 

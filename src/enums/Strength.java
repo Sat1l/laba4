@@ -2,11 +2,11 @@ package enums;
 
 public enum Strength {
 
-    NONE("none"),
+    //NONE("none"),
 
     WEAK("weak"),
 
-    MEDIUM("mid"),
+    //MEDIUM("mid"),
 
     STRONG("strong");
 

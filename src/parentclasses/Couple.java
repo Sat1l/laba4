@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public class Couple implements HasInventory {
 
-    private String name;
+    private final String name;
 
     private final Person husband;
 
@@ -24,10 +24,6 @@ public class Couple implements HasInventory {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Person getHusband(){

@@ -1,5 +1,6 @@
 import childclasses.*;
 import enums.*;
+import exceptions.BuyannyashiyDestroyedEverythingException;
 import exceptions.IllegalAmountException;
 import exceptions.ItemNotInPlaceException;
 import exceptions.LocationMissmatchException;
@@ -9,7 +10,7 @@ import actions.*;
 public class Main {
     public static void main(String[] args) throws IllegalAmountException {
 
-        Conditions conditions = new Conditions(Amount.NONE, Strength.WEAK, Direction.WEST);
+        Conditions conditions = new Conditions(Amount.NONE, Strength.WEAK, Direction.EAST);
         Location home = new Location("home");
         Location somewhere = new Location("somewhere"); //used for the loc that is not given/left outta text
         LocManager locManager = new LocManager(home);
@@ -55,7 +56,8 @@ public class Main {
         bag.addInventory(apples);
         Storage silverPlate = new Storage("silver plate", somewhere);
         Storage table = new Storage("table", ladlowHome);
-
+        UObject money1 = new UObject("money", somewhere);
+        UObject money2 = new UObject("money", somewhere);
 
         Beverage packOfBeer1 = new Beverage("Beer", "Pack",Amount.ALOT, orringtonShop);
         Beverage packOfBeer2 = new Beverage("Beer", "Pack",Amount.ALOT, orringtonShop);
@@ -95,6 +97,8 @@ public class Main {
         //setting up the characters
         Person louis = new Person("Louis", home);
         louis.addInventory(sedative);
+        louis.addInventory(money1);
+        louis.addInventory(money2);
         Person rachel = new Person("Rachel", home);
         Person ellie = new Person("Ellie", home);
         watchTV.watchAt(ellie, tvAtHome);
@@ -132,6 +136,8 @@ public class Main {
         irvinGoldman.setPartner(doryGoldman);
         goldmans.addInventory(napkins);
 
+        //story begins
+
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);
         windBlow.windBlow(conditions, Direction.WEST, Strength.STRONG);
@@ -149,24 +155,16 @@ public class Main {
         ask.ask(rachel, louis, "Where are you going, Lewis?", Interest.CARELESS);
         System.out.println("*Scene in the past*");
         crying.crying(rachel);
-        try {
             give.give(louis, rachel, sedative);
-        } catch (ItemNotInPlaceException e) {
+        try {
+            eatSedativePast.eatSedative(rachel);
+        } catch (BuyannyashiyDestroyedEverythingException e) {
             throw new RuntimeException(e);
         }
-        eatSedativePast.eatSedative(rachel);
         System.out.println("*now*");
-        if(rachel.getCondition() == Condition.CALM){
-            rachel.addInventory(rachelsJournal);
-            try {
-                sit.sit(rachel, chairAtHome);
-            } catch (LocationMissmatchException e) {
-                throw new RuntimeException(e);
-            }
-            flipPages.flipPages(rachel, rachelsJournal, Interest.CARELESS);
-        } else {
-            System.out.println(rachel.getName() + " is "+ rachel.getCondition());
-        }
+        rachel.addInventory(rachelsJournal);
+        sit.sit(rachel, chairAtHome);
+        flipPages.flipPages(rachel, rachelsJournal, Interest.CARELESS);
         System.out.println(rachel.getDoingString());
         System.out.println(ellie.getDoingString());
         say.say(louis, "I'll go Buy some pizza \n");
@@ -178,57 +176,20 @@ public class Main {
         louis.setLocation(ladlowHome);
         rachel.setLocation(ladlowHome);
         silverPlate.setLocation(ladlowHome);
-        try {
-            if(bringTogether.bringTogether(mastertons, pot, ladlowHome)){
-                transferItems.transferItems(steveMasterton, pot, burgers, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bring.bring(charlton, quitch, ladlowHome)){
-                transferItems.transferItems(charlton, container, quitch, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bringTogether.bringTogether(dennikers, plasticBag, ladlowHome)){
-                 transferItems.transferItems(dennikers.getHusband(), plasticBag, canendHam, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bringTogether.bringTogether(goldmans, napkins, ladlowHome)){
-                transferItems.transferItems(goldmans.getHusband(), napkins, coldMaC, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bring.bring(jude, packet, ladlowHome)){
-                transferItems.transferItems(jude, packet, cheeze, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bring.bring(missDanbridge, box, ladlowHome)){
-                transferItems.transferItems(missDanbridge, napkins, coldMaC, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-        try {
-            if(bring.bring(hardu, bag, ladlowHome)){
-                transferItems.transferItems(hardu, bag, apples, table);
-            }
-        } catch (ItemNotInPlaceException e) {
-            throw new RuntimeException(e);
-        }
-
-
+        bringTogether.bringTogether(mastertons, pot, ladlowHome);
+        transferItems.transferItems(steveMasterton, pot, burgers, table);
+        bring.bring(charlton, quitch, ladlowHome);
+        transferItems.transferItems(charlton, container, quitch, table);
+        bringTogether.bringTogether(dennikers, plasticBag, ladlowHome);
+        transferItems.transferItems(dennikers.getHusband(), plasticBag, canendHam, table);
+        bringTogether.bringTogether(goldmans, napkins, ladlowHome);
+        transferItems.transferItems(goldmans.getHusband(), napkins, coldMaC, table);
+        bring.bring(jude, packet, ladlowHome);
+        transferItems.transferItems(jude, packet, cheeze, table);
+        bring.bring(missDanbridge, box, ladlowHome);
+        transferItems.transferItems(missDanbridge, napkins, coldMaC, table);
+        bring.bring(hardu, bag, ladlowHome);
+        transferItems.transferItems(hardu, bag, apples, table);
         if (ladlowHome.equals(party)){
             System.out.println("they basically have a party at ladlows home");
         } else {
@@ -239,11 +200,7 @@ public class Main {
             }
         }
 
-        try {
-            drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
-        } catch (LocationMissmatchException e) {
-            throw new RuntimeException(e);
-        }
+        drinkAlco.drinkAlco(louis, beer, Amount.PLENTY);
         thinkAbout.thinkAbout(louis, tellStories);
 
         rachel.addDoing(crying);
@@ -269,6 +226,6 @@ public class Main {
         say.say(louis,"lu kreed\n");
         say.say(napoliDispetcher, "we're busy well do this in 45mins, thats ok?\n");
         say.say(louis, "yep thats good");
-
+        call.hangUp(louis, napoliDispetcher);
     }
 }
