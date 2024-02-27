@@ -27,7 +27,6 @@ public class Location implements HasInventory {
     @Override
     public void addInventory(UObject toAdd) {
         this.UObjects.add(toAdd);
-        toAdd.setLocation(this);
     }
 
     @Override

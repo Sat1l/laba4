@@ -2,10 +2,7 @@ package actions;
 
 import childclasses.Person;
 import exceptions.ItemNotInPlaceException;
-import parentclasses.Action;
-import parentclasses.Couple;
-import parentclasses.Location;
-import parentclasses.UObject;
+import parentclasses.*;
 
 public class BringTogether extends Action {
 
@@ -15,13 +12,13 @@ public class BringTogether extends Action {
 
     public void bringTogether(Couple couple, UObject uObject, Location location) throws ItemNotInPlaceException{
         if (couple.getInventory().contains(uObject)){
+            ItemMover itemMover = new ItemMover();
             Person husband = couple.getHusband();
             Person wife = couple.getWife();
             husband.addDoing(this);
             wife.addDoing(this);
-            husband.removeInventory(uObject);
+            itemMover.moveUObjectToLoc(uObject, location);
             husband.removeDoing(this);
-            location.addInventory(uObject);
             husband.setLocation(location);
             wife.setLocation(location);
             System.out.println(couple.getName() + " brought " + uObject.getName() + " to " + location.getLocname());

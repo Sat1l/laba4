@@ -2,6 +2,7 @@ package actions;
 
 import childclasses.Person;
 import enums.Condition;
+import exceptions.BuyannyashiyDestroyedEverythingException;
 import exceptions.LocationMissmatchException;
 import parentclasses.Action;
 
@@ -13,7 +14,7 @@ public class CalmSb extends Action{
         super(actionName);
     }
 
-    public void calmSb(Person calmer, Person toCalm) {
+    public void calmSb(Person calmer, Person toCalm) throws BuyannyashiyDestroyedEverythingException{
         try {
             if(calmer.getLocation() != toCalm.getLocation()){
                 throw new LocationMissmatchException(calmer, toCalm);
@@ -27,7 +28,7 @@ public class CalmSb extends Action{
                 System.out.println(toCalm.getName() + " is now calm");
             } else {
                 toCalm.setCondition(Condition.BUYANIT);
-                System.out.println(toCalm.getName() + " is now buyanit");
+                throw new BuyannyashiyDestroyedEverythingException("person is now buyanit");
             }
             toCalm.setCondition(Condition.CALM);
             calmer.removeDoing(this);

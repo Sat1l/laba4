@@ -15,4 +15,8 @@ public class LadlowHome extends LocWithAlco  implements HasOccasion {
         return occasion;
     }
 
+    @Override
+    public String toString() {
+        return locname + " " + occasion;
+    }
 }

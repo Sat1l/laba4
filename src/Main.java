@@ -4,16 +4,34 @@ import exceptions.BuyannyashiyDestroyedEverythingException;
 import exceptions.IllegalAmountException;
 import exceptions.ItemNotInPlaceException;
 import exceptions.LocationMissmatchException;
+import interfaces.AuthorPrinterer;
 import parentclasses.*;
 import actions.*;
 
 public class Main {
     public static void main(String[] args) throws IllegalAmountException {
 
+        class ProgInfo {
+            public void printProgInfo(){
+                System.out.println("This is a script for lab4. The model was made to follow the cut from the book" +
+                        "Pet Cemetery. This class was just made to comply with lab's requirements" +
+                        "AND THE STORY BEGINS!");
+            }
+        }
+
+        AuthorPrinterer authorPrinterer = new AuthorPrinterer() {
+            @Override
+            public void authorPhint(String text) {
+                System.out.println("- " + text + " -");
+            }
+        };
+
+        ProgInfo progInfo = new ProgInfo();
         Conditions conditions = new Conditions(Amount.NONE, Strength.WEAK, Direction.EAST);
         Location home = new Location("home");
         Location somewhere = new Location("somewhere"); //used for the loc that is not given/left outta text
         LocManager locManager = new LocManager(home);
+        ItemMover itemMover = new ItemMover();
 
         //setting up other locs and things
         LadlowHome ladlowHome = new LadlowHome("Ladlow home", "wake");
@@ -137,7 +155,7 @@ public class Main {
         goldmans.addInventory(napkins);
 
         //story begins
-
+        progInfo.printProgInfo();
         locManager.setStoryLocation(home);
         newTuchi.newTuchi(conditions);
         windBlow.windBlow(conditions, Direction.WEST, Strength.STRONG);
@@ -153,7 +171,7 @@ public class Main {
             throw new RuntimeException(e);
         }
         ask.ask(rachel, louis, "Where are you going, Lewis?", Interest.CARELESS);
-        System.out.println("*Scene in the past*");
+        authorPrinterer.authorPhint("Scene in the past");
         crying.crying(rachel);
             give.give(louis, rachel, sedative);
         try {
@@ -161,7 +179,7 @@ public class Main {
         } catch (BuyannyashiyDestroyedEverythingException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("*now*");
+        authorPrinterer.authorPhint("now");
         rachel.addInventory(rachelsJournal);
         sit.sit(rachel, chairAtHome);
         flipPages.flipPages(rachel, rachelsJournal, Interest.CARELESS);
@@ -172,18 +190,19 @@ public class Main {
         say.say(louis, "I didn't want to eat then \n");
 
         locManager.setStoryLocation(ladlowHome);
-        System.out.println(ladlowHome.getLocname() + " " +  ladlowHome.getOccasion());
+        authorPrinterer.authorPhint(ladlowHome.toString());
         louis.setLocation(ladlowHome);
         rachel.setLocation(ladlowHome);
-        silverPlate.setLocation(ladlowHome);
+
+        itemMover.moveUObjectToLoc(silverPlate, ladlowHome);
         bringTogether.bringTogether(mastertons, pot, ladlowHome);
-        transferItems.transferItems(steveMasterton, pot, burgers, table);
-        bring.bring(charlton, quitch, ladlowHome);
+        transferItems.transferItems(mastertons, pot, burgers, table);
+        bring.bring(charlton, container, ladlowHome);
         transferItems.transferItems(charlton, container, quitch, table);
         bringTogether.bringTogether(dennikers, plasticBag, ladlowHome);
-        transferItems.transferItems(dennikers.getHusband(), plasticBag, canendHam, table);
+        transferItems.transferItems(dennikers, plasticBag, canendHam, table);
         bringTogether.bringTogether(goldmans, napkins, ladlowHome);
-        transferItems.transferItems(goldmans.getHusband(), napkins, coldMaC, table);
+        transferItems.transferItems(goldmans, napkins, coldMaC, table);
         bring.bring(jude, packet, ladlowHome);
         transferItems.transferItems(jude, packet, cheeze, table);
         bring.bring(missDanbridge, box, ladlowHome);
@@ -204,7 +223,11 @@ public class Main {
         thinkAbout.thinkAbout(louis, tellStories);
 
         rachel.addDoing(crying);
-        calmSb.calmSb(doryGoldman, rachel);
+        try {
+            calmSb.calmSb(doryGoldman, rachel);
+        } catch (BuyannyashiyDestroyedEverythingException e) {
+            throw new RuntimeException(e);
+        }
         watchSb.watchAt(irvinGoldman, louis);
 
         transferItems.transferItems(ellie, table, burgers, silverPlate);

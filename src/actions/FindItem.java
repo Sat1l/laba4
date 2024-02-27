@@ -23,10 +23,10 @@ public class FindItem extends Action {
         person.addDoing(this);
         int count = 0;
         float f;
-        while (true) {
+        while (count < 3) {
             f = random.nextFloat();
-            if (f < 0.8f) {
-                if (somethingWithInventory.getInventory().contains(UObjectToFind) && (count > 3)) {
+            if (f > 0.8f) {
+                if (somethingWithInventory.getInventory().contains(UObjectToFind)) {
                     somethingWithInventory.removeInventory(UObjectToFind);
                     person.addInventory(UObjectToFind);
                     System.out.println(person.getName() + " found " + UObjectToFind.getName() + " on/in a " + somethingWithInventory.getName());
@@ -35,10 +35,6 @@ public class FindItem extends Action {
                     person.removeDoing(this);
                     throw new ItemNotInPlaceException(person, UObjectToFind);
                 }
-            } else if (count >= 3) {
-                person.removeDoing(this);
-                System.out.println("Either person gave up on searching");
-                break;
             } else {
                 System.out.println(person.getName() + " searches for " + UObjectToFind.getName() + " on/in a " + somethingWithInventory.getName());
                 count += 1;
@@ -50,6 +46,7 @@ public class FindItem extends Action {
                 }
             }
         }
+            System.out.println(person.getName() + "gave up on finding the thing");
     }
 
 }

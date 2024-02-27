@@ -16,12 +16,13 @@ public class Unzip extends Action {
 
     public void unzip(Person person, Jacket jacket) throws ItemNotInPlaceException {
         if (person.getWears().contains(jacket)) {
+            GlassSphere glassSphere = new GlassSphere();
             Random random = new Random();
             person.addDoing(this);
             ZipperStat zipperstat = jacket.getZipperstat();
             if (jacket.getIsZipepd() && (zipperstat == ZipperStat.NORMAL)) {
                 float f = random.nextFloat();
-                if (f <= 0.1f) {
+                if (glassSphere.getNextBool(0.1F)) {
                     jacket.setIsZipped(false);
                     jacket.setZipperstat(ZipperStat.OFFRAILS);
                     person.removeDoing(this);
@@ -37,4 +38,13 @@ public class Unzip extends Action {
             throw new ItemNotInPlaceException(person, jacket);
         }
     }
+
+    class GlassSphere{
+        public boolean getNextBool(float chance){
+            Random random = new Random();
+            float f = random.nextFloat();
+            return f<=chance;
+        }
+    }
+
 }

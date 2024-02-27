@@ -26,9 +26,7 @@ public class UObject implements HasLocation, HasName {
 
     @Override
     public void setLocation(Location newLocation){
-        this.location.removeInventory(this);
         this.location = newLocation;
-        newLocation.addInventory(this);
     }
 
 }
